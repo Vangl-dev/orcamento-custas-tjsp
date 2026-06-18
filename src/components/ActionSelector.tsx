@@ -39,7 +39,6 @@ export default function ActionSelector({
               </option>
             ))}
 
-            <option value="alimentos">Alimentos</option>
           </select>
         </div>
 
@@ -69,9 +68,24 @@ export default function ActionSelector({
             type="number"
             placeholder="Valor mensal"
             value={valorPrestacao}
-            onChange={(e) =>
-              setValorPrestacao(e.target.value)
-            }
+            onChange={(e) => {
+              const valor = e.target.value
+
+              setValorPrestacao(valor)
+
+              const mensal = Number(valor)
+
+              if (!isNaN(mensal) && mensal > 0) {
+                const anual = mensal * 12
+
+                setValorCausaDisplay(
+                  anual.toLocaleString('pt-BR', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  }),
+                )
+              }
+            }}
           />
         </div>
       )}

@@ -76,6 +76,7 @@ function App() {
     execucao: 'Execução',
     cumprimento: 'Cumprimento de sentença',
     inventario: 'Inventário / Partilha',
+    alimentos: 'Alimentos',
     penalPrivada: 'Ação penal privada',
     recursoInominado: 'Recurso inominado',
     agravoInstrumento: 'Agravo de instrumento',

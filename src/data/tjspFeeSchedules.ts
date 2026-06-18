@@ -56,7 +56,13 @@ export const TJSP_FEE_SCHEDULES: Record<string, FeeRule> = {
       { ate: Infinity, ufesp: 3000 },
     ],
   },
-
+  alimentos: {
+    kind: 'percentual',
+    percentual: 0.015,
+    minimoUfesp: 5,
+    maximoUfesp: 3000,
+    fundamento: 'Ação de alimentos',
+  },
   penalPrivada: {
     kind: 'fixaUfesp',
     ufesp: 100,

@@ -10,6 +10,8 @@ type Props = {
   fundamento?: string
   observacao?: string
   formatCurrency: (value: number) => string
+  copiarMemoria: () => void
+  limparCalculo: () => void
 }
 
 export default function BudgetSidebar({
@@ -22,6 +24,8 @@ export default function BudgetSidebar({
   fundamento,
   observacao,
   formatCurrency,
+  copiarMemoria,
+  limparCalculo,
 }: Props) {
   
   return (
@@ -91,7 +95,18 @@ export default function BudgetSidebar({
         📄 Exportar PDF
       </button>
   </div>
-
+      <button
+        className="export-button"
+        onClick={copiarMemoria}
+      >
+        📋 Copiar memória
+      </button>
+      <button
+        className="export-button"
+        onClick={limparCalculo}
+      >
+        🧹 Limpar cálculo
+      </button>
       <div
         style={{
           marginTop: '18px',

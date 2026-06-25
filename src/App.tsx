@@ -15,6 +15,10 @@ import {
 import SettingsPanel from './components/SettingsPanel'
 import { calcularCorrecaoMonetaria } from './engines/correctionEngine'
 import { calcularJurosLegais } from './engines/legalInterestEngine'
+import {
+  loadCorrectionData,
+  type CorrectionTableData,
+} from './services/correctionDataService'
 
 function App() {
   const [settings, setSettings] = useState(loadSettings())
@@ -22,6 +26,22 @@ function App() {
     saveSettings(settings)
   }, [settings])
   const [year] = useState(2026)
+
+  const [correctionTable, setCorrectionTable] =
+    useState<CorrectionTableData | null>(null)
+  const [correctionError, setCorrectionError] = useState('')
+
+  useEffect(() => {
+    loadCorrectionData()
+      .then(setCorrectionTable)
+      .catch((err) =>
+        setCorrectionError(
+          err instanceof Error
+            ? err.message
+            : 'Erro ao carregar tabela de correção.',
+        ),
+      )
+  }, [])
 
   const [tipoAcao, setTipoAcao] = useState('')
   const [activeTab, setActiveTab] = useState<'custas' | 'correcao'>('custas')
@@ -101,7 +121,8 @@ function App() {
   const preparoApelacao =
   parseBrazilianCurrency(valorApelacao) * 0.04
 
-  const resultadoCorrecao = calcularCorrecaoMonetaria({
+  const factors = correctionTable?.factors ?? []
+  const resultadoCorrecao = calcularCorrecaoMonetaria(factors, {
     valorPrincipal: parseBrazilianCurrency(valorCorrecaoDisplay),
     termoInicial,
     termoFinal,
@@ -112,9 +133,62 @@ function App() {
     startDate: jurosDataInicial,
     endDate: jurosDataFinal,
   })
+  const dataHora = new Date().toLocaleString('pt-BR')
 
-  
+ const memoriaCalculo = `
+TJSP Toolkit
+──────────────────────────
 
+Data/Hora:
+${dataHora}
+
+Modalidade:
+${actionLabels[tipoAcao] ?? 'Não informada'}
+
+Valor da causa:
+${valorCausaDisplay || 'Não informado'}
+
+Taxa Judiciária:
+${formatCurrency(resultadoTaxa.valor)}
+
+Correios:
+${formatCurrency(resultadoCustas.correios)}
+
+Oficial de Justiça:
+${formatCurrency(resultadoCustas.oficial)}
+
+TOTAL:
+${formatCurrency(totalGeral)}
+
+Fundamento:
+${resultadoTaxa.fundamento}
+
+${resultadoTaxa.observacao ?? ''}
+
+──────────────────────────
+
+Gerado pelo TJSP Toolkit
+https://vangl-dev.github.io/orcamento-custas-tjsp
+`.trim()
+
+const copiarMemoria = async () => {
+  try {
+    await navigator.clipboard.writeText(memoriaCalculo)
+    alert('Memória copiada!')
+  } catch {
+    alert('Não foi possível copiar.')
+  }
+} 
+
+const limparCalculo = () => {
+  setTipoAcao('')
+  setValorCausaDisplay('')
+  setValorPrestacao('')
+  setValorApelacao('')
+  setPostalQtd(0)
+  setOficialQtd(0)
+  setTipoOficial('deslocamento')
+}
   return (
     <div className="app-shell">
       <Header onSettingsClick={() => setSettingsOpen(true)} />
@@ -124,6 +198,8 @@ function App() {
         setSettings={setSettings}
         isOpen={settingsOpen}
         onClose={() => setSettingsOpen(false)}
+        correctionTable={correctionTable}
+        correctionError={correctionError}
       />
 
       <main className="dashboard-layout">
@@ -264,6 +340,8 @@ function App() {
               resultadoJuros={resultadoJuros}
               formatBrazilianInput={formatBrazilianInput}
               formatCurrency={formatCurrency}
+              correctionFactors={factors}
+              correctionMetadata={correctionTable?.metadata ?? null}
             />
           )}
         </section>
@@ -279,6 +357,8 @@ function App() {
             fundamento={resultadoTaxa.fundamento}
             observacao={resultadoTaxa.observacao}
             formatCurrency={formatCurrency}
+            copiarMemoria={copiarMemoria}
+            limparCalculo={limparCalculo}
           />
         )}
       </main>

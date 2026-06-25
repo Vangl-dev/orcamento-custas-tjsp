@@ -1,4 +1,4 @@
-import { TJSP_CORRECTION_FACTORS } from '../data/tjspCorrectionFactors'
+import type { CorrectionFactor } from '../services/correctionDataService'
 
 type CorrectionInput = {
   valorPrincipal: number
@@ -15,24 +15,19 @@ export type CorrectionResult = {
   erro?: string
 }
 
-const factorsByKey = new Map(
-  TJSP_CORRECTION_FACTORS.map((item) => [
-    `${item.year}-${String(item.month).padStart(2, '0')}`,
-    item.factor,
-  ]),
-)
+export function calcularCorrecaoMonetaria(
+  factors: CorrectionFactor[],
+  { valorPrincipal, termoInicial, termoFinal }: CorrectionInput,
+): CorrectionResult {
+  const factorsByKey = new Map(
+    factors.map((item) => [
+      `${item.year}-${String(item.month).padStart(2, '0')}`,
+      item.factor,
+    ]),
+  )
 
-function getFactor(monthKey: string) {
-  return factorsByKey.get(monthKey)
-}
-
-export function calcularCorrecaoMonetaria({
-  valorPrincipal,
-  termoInicial,
-  termoFinal,
-}: CorrectionInput): CorrectionResult {
-  const fatorInicial = getFactor(termoInicial)
-  const fatorFinal = getFactor(termoFinal)
+  const fatorInicial = factorsByKey.get(termoInicial)
+  const fatorFinal = factorsByKey.get(termoFinal)
 
   if (!valorPrincipal || valorPrincipal <= 0) {
     return {
@@ -76,18 +71,5 @@ export function calcularCorrecaoMonetaria({
     indice,
     fatorInicial,
     fatorFinal,
-  }
-}
-
-export function getCorrectionMonthBounds() {
-  const sorted = [...TJSP_CORRECTION_FACTORS].sort(
-    (a, b) => a.year - b.year || a.month - b.month,
-  )
-  const first = sorted[0]
-  const last = sorted[sorted.length - 1]
-
-  return {
-    min: `${first.year}-${String(first.month).padStart(2, '0')}`,
-    max: `${last.year}-${String(last.month).padStart(2, '0')}`,
   }
 }

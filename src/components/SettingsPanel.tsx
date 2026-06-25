@@ -2,12 +2,15 @@ import {
   DEFAULT_SETTINGS,
   type AppSettings,
 } from '../data/appSettings'
+import type { CorrectionTableData } from '../services/correctionDataService'
 
 type Props = {
   settings: AppSettings
   setSettings: (settings: AppSettings) => void
   isOpen: boolean
   onClose: () => void
+  correctionTable: CorrectionTableData | null
+  correctionError: string
 }
 
 export default function SettingsPanel({
@@ -15,6 +18,8 @@ export default function SettingsPanel({
   setSettings,
   isOpen,
   onClose,
+  correctionTable,
+  correctionError,
 }: Props) {
   if (!isOpen) return null
 
@@ -45,6 +50,18 @@ export default function SettingsPanel({
     fontSize: '1rem',
   }
 
+  const cardStyle = {
+    padding: '16px',
+    borderRadius: '12px',
+    background: 'rgba(148, 163, 184, 0.08)',
+    marginTop: '20px',
+  }
+
+  const meta = correctionTable?.metadata
+  const factorCount = correctionTable?.factors.length ?? 0
+  const firstFactor = correctionTable?.factors[0]
+  const lastFactor = correctionTable?.factors[factorCount - 1]
+
   return (
     <div
       style={{
@@ -64,6 +81,8 @@ export default function SettingsPanel({
           borderRadius: '16px',
           width: '520px',
           maxWidth: '90vw',
+          maxHeight: '85vh',
+          overflowY: 'auto',
         }}
       >
         <h2 style={{ margin: 0, color: '#f8fafc' }}>
@@ -160,6 +179,61 @@ export default function SettingsPanel({
               }
             />
           </label>
+        </div>
+
+        <div style={cardStyle}>
+          <h3 style={{ margin: 0, color: '#f8fafc', fontSize: '1rem' }}>
+            Tabela Prática
+          </h3>
+
+          {correctionError ? (
+            <p style={{ color: '#f87171', marginTop: '8px', fontSize: '0.875rem' }}>
+              {correctionError}
+            </p>
+          ) : meta ? (
+            <div
+              style={{
+                display: 'grid',
+                gap: '6px',
+                marginTop: '10px',
+                fontSize: '0.875rem',
+                color: '#cbd5e1',
+              }}
+            >
+              <div>
+                <strong style={{ color: '#94a3b8' }}>Fonte:</strong>{' '}
+                {meta.source}
+              </div>
+              <div>
+                <strong style={{ color: '#94a3b8' }}>Versão:</strong>{' '}
+                {meta.version}
+              </div>
+              <div>
+                <strong style={{ color: '#94a3b8' }}>Última atualização:</strong>{' '}
+                {meta.updatedAt}
+              </div>
+              <div>
+                <strong style={{ color: '#94a3b8' }}>Primeiro registro:</strong>{' '}
+                {firstFactor
+                  ? `${String(firstFactor.month).padStart(2, '0')}/${firstFactor.year}`
+                  : '--'}
+              </div>
+              <div>
+                <strong style={{ color: '#94a3b8' }}>Último registro:</strong>{' '}
+                {lastFactor
+                  ? `${String(lastFactor.month).padStart(2, '0')}/${lastFactor.year}`
+                  : '--'}
+              </div>
+              <div>
+                <strong style={{ color: '#94a3b8' }}>Quantidade de registros:</strong>{' '}
+                {factorCount}
+              </div>
+            </div>
+          ) : (
+            <p style={{ color: '#94a3b8', marginTop: '8px', fontSize: '0.875rem' }}>
+              Carregando...
+            </p>
+          )}
         </div>
 
         <div style={{ marginTop: '24px' }}>

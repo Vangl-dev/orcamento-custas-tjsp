@@ -1,14 +1,14 @@
 import { CircleHelp, FileDown } from 'lucide-react'
 import {
-  TJSP_CORRECTION_SOURCE_LABEL,
-  TJSP_CORRECTION_SOURCE_URL,
-} from '../data/tjspCorrectionFactors'
-import {
   LEGAL_INTEREST_SOURCE_LABEL,
   LEGAL_INTEREST_SOURCE_URL,
 } from '../data/legalInterestRates'
 import type { CorrectionResult } from '../engines/correctionEngine'
-import { getCorrectionMonthBounds } from '../engines/correctionEngine'
+import type {
+  CorrectionFactor,
+  CorrectionTableMetadata,
+} from '../services/correctionDataService'
+import { getMonthBounds } from '../services/correctionDataService'
 import {
   getLegalInterestMonthBounds,
   type LegalInterestResult,
@@ -30,9 +30,10 @@ type Props = {
   resultadoJuros: LegalInterestResult
   formatBrazilianInput: (value: string) => string
   formatCurrency: (value: number) => string
+  correctionFactors: CorrectionFactor[]
+  correctionMetadata: CorrectionTableMetadata | null
 }
 
-const monthBounds = getCorrectionMonthBounds()
 const legalInterestBounds = getLegalInterestMonthBounds()
 
 function formatFactor(value: number) {
@@ -82,7 +83,10 @@ export default function MonetaryCorrectionPanel({
   resultadoJuros,
   formatBrazilianInput,
   formatCurrency,
+  correctionFactors,
+  correctionMetadata,
 }: Props) {
+  const monthBounds = getMonthBounds(correctionFactors)
   const totalAtualizado = resultado.valorCorrigido + resultadoJuros.juros
   const canExport = !resultado.erro && !resultadoJuros.erro
 
@@ -100,10 +104,12 @@ export default function MonetaryCorrectionPanel({
         <div className="update-status">
           <span
             className={
-              isBehindPreviousMonth(monthBounds.max) ? 'attention' : ''
+              monthBounds.max && isBehindPreviousMonth(monthBounds.max)
+                ? 'attention'
+                : ''
             }
           >
-            TJSP até {formatMonthLabel(monthBounds.max)}
+            TJSP até {monthBounds.max ? formatMonthLabel(monthBounds.max) : '--'}
           </span>
 
           <span
@@ -121,9 +127,9 @@ export default function MonetaryCorrectionPanel({
           >
             <CircleHelp size={16} aria-hidden="true" />
             <span className="tooltip-content" role="tooltip">
-              Para atualizar vários meses, edite src/data/manualDataUpdates.ts.
-              Use factor para a Tabela TJSP e monthlyRate para a Taxa Legal
-              dividida por 100. Depois salve e recarregue o app.
+              Para atualizar, substitua o arquivo
+              public/data/correction-table.json gerado pelo
+              TJSP Data Builder.
             </span>
           </button>
         </div>
@@ -148,8 +154,8 @@ export default function MonetaryCorrectionPanel({
 
             <input
               type="month"
-              min={monthBounds.min}
-              max={monthBounds.max}
+              min={monthBounds.min || undefined}
+              max={monthBounds.max || undefined}
               value={termoInicial}
               onChange={(e) => setTermoInicial(e.target.value)}
             />
@@ -160,8 +166,8 @@ export default function MonetaryCorrectionPanel({
 
             <input
               type="month"
-              min={monthBounds.min}
-              max={monthBounds.max}
+              min={monthBounds.min || undefined}
+              max={monthBounds.max || undefined}
               value={termoFinal}
               onChange={(e) => setTermoFinal(e.target.value)}
             />
@@ -274,7 +280,7 @@ export default function MonetaryCorrectionPanel({
                 days: item.days,
                 amount: formatCurrency(item.amount),
               })),
-              fonteCorrecao: TJSP_CORRECTION_SOURCE_LABEL,
+              fonteCorrecao: correctionMetadata?.sourceLabel ?? 'Tabela Prática TJSP',
               fonteJuros: LEGAL_INTEREST_SOURCE_LABEL,
             })
           }
@@ -291,8 +297,11 @@ export default function MonetaryCorrectionPanel({
 
         <div className="source-note">
           <strong>Correção:</strong>{' '}
-          <a href={TJSP_CORRECTION_SOURCE_URL} target="_blank">
-            {TJSP_CORRECTION_SOURCE_LABEL}
+          <a
+            href={correctionMetadata?.sourceUrl ?? '#'}
+            target="_blank"
+          >
+            {correctionMetadata?.sourceLabel ?? 'Tabela Prática TJSP'}
           </a>
           <br />
           <strong>Juros:</strong>{' '}

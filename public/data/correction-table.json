@@ -1,0 +1,3711 @@
+{
+  "metadata": {
+    "version": "2026.06",
+    "updatedAt": "2026-06-25",
+    "source": "AASP",
+    "sourceUrl": "https://api.tjsp.jus.br/Handlers/Handler/FileFetch.ashx?codigo=189280",
+    "sourceLabel": "Tabela Prática TJSP, arquivo 189280"
+  },
+  "factors": [
+    {
+      "year": 1964,
+      "month": 10,
+      "factor": 10000
+    },
+    {
+      "year": 1964,
+      "month": 11,
+      "factor": 10000
+    },
+    {
+      "year": 1964,
+      "month": 12,
+      "factor": 10000
+    },
+    {
+      "year": 1965,
+      "month": 1,
+      "factor": 11300
+    },
+    {
+      "year": 1965,
+      "month": 2,
+      "factor": 11300
+    },
+    {
+      "year": 1965,
+      "month": 3,
+      "factor": 11300
+    },
+    {
+      "year": 1965,
+      "month": 4,
+      "factor": 13400
+    },
+    {
+      "year": 1965,
+      "month": 5,
+      "factor": 13400
+    },
+    {
+      "year": 1965,
+      "month": 6,
+      "factor": 13400
+    },
+    {
+      "year": 1965,
+      "month": 7,
+      "factor": 15200
+    },
+    {
+      "year": 1965,
+      "month": 8,
+      "factor": 15200
+    },
+    {
+      "year": 1965,
+      "month": 9,
+      "factor": 15700
+    },
+    {
+      "year": 1965,
+      "month": 10,
+      "factor": 15900
+    },
+    {
+      "year": 1965,
+      "month": 11,
+      "factor": 16050
+    },
+    {
+      "year": 1965,
+      "month": 12,
+      "factor": 16300
+    },
+    {
+      "year": 1966,
+      "month": 1,
+      "factor": 16600
+    },
+    {
+      "year": 1966,
+      "month": 2,
+      "factor": 17050
+    },
+    {
+      "year": 1966,
+      "month": 3,
+      "factor": 17300
+    },
+    {
+      "year": 1966,
+      "month": 4,
+      "factor": 17600
+    },
+    {
+      "year": 1966,
+      "month": 5,
+      "factor": 18280
+    },
+    {
+      "year": 1966,
+      "month": 6,
+      "factor": 19090
+    },
+    {
+      "year": 1966,
+      "month": 7,
+      "factor": 19870
+    },
+    {
+      "year": 1966,
+      "month": 8,
+      "factor": 20430
+    },
+    {
+      "year": 1966,
+      "month": 9,
+      "factor": 21010
+    },
+    {
+      "year": 1966,
+      "month": 10,
+      "factor": 21610
+    },
+    {
+      "year": 1966,
+      "month": 11,
+      "factor": 22180
+    },
+    {
+      "year": 1966,
+      "month": 12,
+      "factor": 22690
+    },
+    {
+      "year": 1967,
+      "month": 1,
+      "factor": 23230
+    },
+    {
+      "year": 1967,
+      "month": 2,
+      "factor": 23.78
+    },
+    {
+      "year": 1967,
+      "month": 3,
+      "factor": 24.28
+    },
+    {
+      "year": 1967,
+      "month": 4,
+      "factor": 24.64
+    },
+    {
+      "year": 1967,
+      "month": 5,
+      "factor": 25.01
+    },
+    {
+      "year": 1967,
+      "month": 6,
+      "factor": 25.46
+    },
+    {
+      "year": 1967,
+      "month": 7,
+      "factor": 26.18
+    },
+    {
+      "year": 1967,
+      "month": 8,
+      "factor": 26.84
+    },
+    {
+      "year": 1967,
+      "month": 9,
+      "factor": 27.25
+    },
+    {
+      "year": 1967,
+      "month": 10,
+      "factor": 27.38
+    },
+    {
+      "year": 1967,
+      "month": 11,
+      "factor": 27.57
+    },
+    {
+      "year": 1967,
+      "month": 12,
+      "factor": 27.96
+    },
+    {
+      "year": 1968,
+      "month": 1,
+      "factor": 28.48
+    },
+    {
+      "year": 1968,
+      "month": 2,
+      "factor": 28.98
+    },
+    {
+      "year": 1968,
+      "month": 3,
+      "factor": 29.4
+    },
+    {
+      "year": 1968,
+      "month": 4,
+      "factor": 29.83
+    },
+    {
+      "year": 1968,
+      "month": 5,
+      "factor": 30.39
+    },
+    {
+      "year": 1968,
+      "month": 6,
+      "factor": 31.2
+    },
+    {
+      "year": 1968,
+      "month": 7,
+      "factor": 32.09
+    },
+    {
+      "year": 1968,
+      "month": 8,
+      "factor": 32.81
+    },
+    {
+      "year": 1968,
+      "month": 9,
+      "factor": 33.41
+    },
+    {
+      "year": 1968,
+      "month": 10,
+      "factor": 33.88
+    },
+    {
+      "year": 1968,
+      "month": 11,
+      "factor": 34.39
+    },
+    {
+      "year": 1968,
+      "month": 12,
+      "factor": 34.95
+    },
+    {
+      "year": 1969,
+      "month": 1,
+      "factor": 35.62
+    },
+    {
+      "year": 1969,
+      "month": 2,
+      "factor": 36.27
+    },
+    {
+      "year": 1969,
+      "month": 3,
+      "factor": 36.91
+    },
+    {
+      "year": 1969,
+      "month": 4,
+      "factor": 37.43
+    },
+    {
+      "year": 1969,
+      "month": 5,
+      "factor": 38.01
+    },
+    {
+      "year": 1969,
+      "month": 6,
+      "factor": 38.48
+    },
+    {
+      "year": 1969,
+      "month": 7,
+      "factor": 39
+    },
+    {
+      "year": 1969,
+      "month": 8,
+      "factor": 39.27
+    },
+    {
+      "year": 1969,
+      "month": 9,
+      "factor": 39.56
+    },
+    {
+      "year": 1969,
+      "month": 10,
+      "factor": 39.92
+    },
+    {
+      "year": 1969,
+      "month": 11,
+      "factor": 40.57
+    },
+    {
+      "year": 1969,
+      "month": 12,
+      "factor": 41.42
+    },
+    {
+      "year": 1970,
+      "month": 1,
+      "factor": 42.35
+    },
+    {
+      "year": 1970,
+      "month": 2,
+      "factor": 43.3
+    },
+    {
+      "year": 1970,
+      "month": 3,
+      "factor": 44.17
+    },
+    {
+      "year": 1970,
+      "month": 4,
+      "factor": 44.67
+    },
+    {
+      "year": 1970,
+      "month": 5,
+      "factor": 45.08
+    },
+    {
+      "year": 1970,
+      "month": 6,
+      "factor": 45.5
+    },
+    {
+      "year": 1970,
+      "month": 7,
+      "factor": 46.2
+    },
+    {
+      "year": 1970,
+      "month": 8,
+      "factor": 46.61
+    },
+    {
+      "year": 1970,
+      "month": 9,
+      "factor": 47.05
+    },
+    {
+      "year": 1970,
+      "month": 10,
+      "factor": 47.61
+    },
+    {
+      "year": 1970,
+      "month": 11,
+      "factor": 48.51
+    },
+    {
+      "year": 1970,
+      "month": 12,
+      "factor": 49.54
+    },
+    {
+      "year": 1971,
+      "month": 1,
+      "factor": 50.51
+    },
+    {
+      "year": 1971,
+      "month": 2,
+      "factor": 51.44
+    },
+    {
+      "year": 1971,
+      "month": 3,
+      "factor": 52.12
+    },
+    {
+      "year": 1971,
+      "month": 4,
+      "factor": 52.64
+    },
+    {
+      "year": 1971,
+      "month": 5,
+      "factor": 53.25
+    },
+    {
+      "year": 1971,
+      "month": 6,
+      "factor": 54.01
+    },
+    {
+      "year": 1971,
+      "month": 7,
+      "factor": 55.08
+    },
+    {
+      "year": 1971,
+      "month": 8,
+      "factor": 56.18
+    },
+    {
+      "year": 1971,
+      "month": 9,
+      "factor": 57.36
+    },
+    {
+      "year": 1971,
+      "month": 10,
+      "factor": 58.61
+    },
+    {
+      "year": 1971,
+      "month": 11,
+      "factor": 59.79
+    },
+    {
+      "year": 1971,
+      "month": 12,
+      "factor": 60.77
+    },
+    {
+      "year": 1972,
+      "month": 1,
+      "factor": 61.52
+    },
+    {
+      "year": 1972,
+      "month": 2,
+      "factor": 62.26
+    },
+    {
+      "year": 1972,
+      "month": 3,
+      "factor": 63.09
+    },
+    {
+      "year": 1972,
+      "month": 4,
+      "factor": 63.81
+    },
+    {
+      "year": 1972,
+      "month": 5,
+      "factor": 64.66
+    },
+    {
+      "year": 1972,
+      "month": 6,
+      "factor": 65.75
+    },
+    {
+      "year": 1972,
+      "month": 7,
+      "factor": 66.93
+    },
+    {
+      "year": 1972,
+      "month": 8,
+      "factor": 67.89
+    },
+    {
+      "year": 1972,
+      "month": 9,
+      "factor": 68.46
+    },
+    {
+      "year": 1972,
+      "month": 10,
+      "factor": 68.95
+    },
+    {
+      "year": 1972,
+      "month": 11,
+      "factor": 69.61
+    },
+    {
+      "year": 1972,
+      "month": 12,
+      "factor": 70.07
+    },
+    {
+      "year": 1973,
+      "month": 1,
+      "factor": 70.87
+    },
+    {
+      "year": 1973,
+      "month": 2,
+      "factor": 71.57
+    },
+    {
+      "year": 1973,
+      "month": 3,
+      "factor": 72.32
+    },
+    {
+      "year": 1973,
+      "month": 4,
+      "factor": 73.19
+    },
+    {
+      "year": 1973,
+      "month": 5,
+      "factor": 74.03
+    },
+    {
+      "year": 1973,
+      "month": 6,
+      "factor": 74.97
+    },
+    {
+      "year": 1973,
+      "month": 7,
+      "factor": 75.8
+    },
+    {
+      "year": 1973,
+      "month": 8,
+      "factor": 76.48
+    },
+    {
+      "year": 1973,
+      "month": 9,
+      "factor": 77.12
+    },
+    {
+      "year": 1973,
+      "month": 10,
+      "factor": 77.87
+    },
+    {
+      "year": 1973,
+      "month": 11,
+      "factor": 78.4
+    },
+    {
+      "year": 1973,
+      "month": 12,
+      "factor": 79.07
+    },
+    {
+      "year": 1974,
+      "month": 1,
+      "factor": 80.62
+    },
+    {
+      "year": 1974,
+      "month": 2,
+      "factor": 81.47
+    },
+    {
+      "year": 1974,
+      "month": 3,
+      "factor": 82.69
+    },
+    {
+      "year": 1974,
+      "month": 4,
+      "factor": 83.73
+    },
+    {
+      "year": 1974,
+      "month": 5,
+      "factor": 85.1
+    },
+    {
+      "year": 1974,
+      "month": 6,
+      "factor": 86.91
+    },
+    {
+      "year": 1974,
+      "month": 7,
+      "factor": 89.8
+    },
+    {
+      "year": 1974,
+      "month": 8,
+      "factor": 93.75
+    },
+    {
+      "year": 1974,
+      "month": 9,
+      "factor": 98.22
+    },
+    {
+      "year": 1974,
+      "month": 10,
+      "factor": 101.9
+    },
+    {
+      "year": 1974,
+      "month": 11,
+      "factor": 104.1
+    },
+    {
+      "year": 1974,
+      "month": 12,
+      "factor": 105.41
+    },
+    {
+      "year": 1975,
+      "month": 1,
+      "factor": 106.76
+    },
+    {
+      "year": 1975,
+      "month": 2,
+      "factor": 108.38
+    },
+    {
+      "year": 1975,
+      "month": 3,
+      "factor": 110.18
+    },
+    {
+      "year": 1975,
+      "month": 4,
+      "factor": 112.25
+    },
+    {
+      "year": 1975,
+      "month": 5,
+      "factor": 114.49
+    },
+    {
+      "year": 1975,
+      "month": 6,
+      "factor": 117.13
+    },
+    {
+      "year": 1975,
+      "month": 7,
+      "factor": 119.27
+    },
+    {
+      "year": 1975,
+      "month": 8,
+      "factor": 121.31
+    },
+    {
+      "year": 1975,
+      "month": 9,
+      "factor": 123.2
+    },
+    {
+      "year": 1975,
+      "month": 10,
+      "factor": 125.7
+    },
+    {
+      "year": 1975,
+      "month": 11,
+      "factor": 128.43
+    },
+    {
+      "year": 1975,
+      "month": 12,
+      "factor": 130.93
+    },
+    {
+      "year": 1976,
+      "month": 1,
+      "factor": 133.34
+    },
+    {
+      "year": 1976,
+      "month": 2,
+      "factor": 135.9
+    },
+    {
+      "year": 1976,
+      "month": 3,
+      "factor": 138.94
+    },
+    {
+      "year": 1976,
+      "month": 4,
+      "factor": 142.24
+    },
+    {
+      "year": 1976,
+      "month": 5,
+      "factor": 145.83
+    },
+    {
+      "year": 1976,
+      "month": 6,
+      "factor": 150.17
+    },
+    {
+      "year": 1976,
+      "month": 7,
+      "factor": 154.6
+    },
+    {
+      "year": 1976,
+      "month": 8,
+      "factor": 158.55
+    },
+    {
+      "year": 1976,
+      "month": 9,
+      "factor": 162.97
+    },
+    {
+      "year": 1976,
+      "month": 10,
+      "factor": 168.33
+    },
+    {
+      "year": 1976,
+      "month": 11,
+      "factor": 174.4
+    },
+    {
+      "year": 1976,
+      "month": 12,
+      "factor": 179.68
+    },
+    {
+      "year": 1977,
+      "month": 1,
+      "factor": 183.65
+    },
+    {
+      "year": 1977,
+      "month": 2,
+      "factor": 186.83
+    },
+    {
+      "year": 1977,
+      "month": 3,
+      "factor": 190.51
+    },
+    {
+      "year": 1977,
+      "month": 4,
+      "factor": 194.83
+    },
+    {
+      "year": 1977,
+      "month": 5,
+      "factor": 200.45
+    },
+    {
+      "year": 1977,
+      "month": 6,
+      "factor": 206.9
+    },
+    {
+      "year": 1977,
+      "month": 7,
+      "factor": 213.8
+    },
+    {
+      "year": 1977,
+      "month": 8,
+      "factor": 219.51
+    },
+    {
+      "year": 1977,
+      "month": 9,
+      "factor": 224.01
+    },
+    {
+      "year": 1977,
+      "month": 10,
+      "factor": 227.15
+    },
+    {
+      "year": 1977,
+      "month": 11,
+      "factor": 230.3
+    },
+    {
+      "year": 1977,
+      "month": 12,
+      "factor": 233.74
+    },
+    {
+      "year": 1978,
+      "month": 1,
+      "factor": 238.32
+    },
+    {
+      "year": 1978,
+      "month": 2,
+      "factor": 243.35
+    },
+    {
+      "year": 1978,
+      "month": 3,
+      "factor": 248.99
+    },
+    {
+      "year": 1978,
+      "month": 4,
+      "factor": 255.41
+    },
+    {
+      "year": 1978,
+      "month": 5,
+      "factor": 262.87
+    },
+    {
+      "year": 1978,
+      "month": 6,
+      "factor": 270.88
+    },
+    {
+      "year": 1978,
+      "month": 7,
+      "factor": 279.04
+    },
+    {
+      "year": 1978,
+      "month": 8,
+      "factor": 287.58
+    },
+    {
+      "year": 1978,
+      "month": 9,
+      "factor": 295.57
+    },
+    {
+      "year": 1978,
+      "month": 10,
+      "factor": 303.29
+    },
+    {
+      "year": 1978,
+      "month": 11,
+      "factor": 310.49
+    },
+    {
+      "year": 1978,
+      "month": 12,
+      "factor": 318.44
+    },
+    {
+      "year": 1979,
+      "month": 1,
+      "factor": 326.82
+    },
+    {
+      "year": 1979,
+      "month": 2,
+      "factor": 334.2
+    },
+    {
+      "year": 1979,
+      "month": 3,
+      "factor": 341.97
+    },
+    {
+      "year": 1979,
+      "month": 4,
+      "factor": 350.51
+    },
+    {
+      "year": 1979,
+      "month": 5,
+      "factor": 363.64
+    },
+    {
+      "year": 1979,
+      "month": 6,
+      "factor": 377.54
+    },
+    {
+      "year": 1979,
+      "month": 7,
+      "factor": 390.1
+    },
+    {
+      "year": 1979,
+      "month": 8,
+      "factor": 400.71
+    },
+    {
+      "year": 1979,
+      "month": 9,
+      "factor": 412.24
+    },
+    {
+      "year": 1979,
+      "month": 10,
+      "factor": 428.8
+    },
+    {
+      "year": 1979,
+      "month": 11,
+      "factor": 448.47
+    },
+    {
+      "year": 1979,
+      "month": 12,
+      "factor": 468.71
+    },
+    {
+      "year": 1980,
+      "month": 1,
+      "factor": 487.83
+    },
+    {
+      "year": 1980,
+      "month": 2,
+      "factor": 508.33
+    },
+    {
+      "year": 1980,
+      "month": 3,
+      "factor": 527.14
+    },
+    {
+      "year": 1980,
+      "month": 4,
+      "factor": 546.64
+    },
+    {
+      "year": 1980,
+      "month": 5,
+      "factor": 566.86
+    },
+    {
+      "year": 1980,
+      "month": 6,
+      "factor": 586.13
+    },
+    {
+      "year": 1980,
+      "month": 7,
+      "factor": 604.89
+    },
+    {
+      "year": 1980,
+      "month": 8,
+      "factor": 624.25
+    },
+    {
+      "year": 1980,
+      "month": 9,
+      "factor": 644.23
+    },
+    {
+      "year": 1980,
+      "month": 10,
+      "factor": 663.56
+    },
+    {
+      "year": 1980,
+      "month": 11,
+      "factor": 684.79
+    },
+    {
+      "year": 1980,
+      "month": 12,
+      "factor": 706.7
+    },
+    {
+      "year": 1981,
+      "month": 1,
+      "factor": 738.5
+    },
+    {
+      "year": 1981,
+      "month": 2,
+      "factor": 775.43
+    },
+    {
+      "year": 1981,
+      "month": 3,
+      "factor": 825.83
+    },
+    {
+      "year": 1981,
+      "month": 4,
+      "factor": 877.86
+    },
+    {
+      "year": 1981,
+      "month": 5,
+      "factor": 930.53
+    },
+    {
+      "year": 1981,
+      "month": 6,
+      "factor": 986.36
+    },
+    {
+      "year": 1981,
+      "month": 7,
+      "factor": 1045.54
+    },
+    {
+      "year": 1981,
+      "month": 8,
+      "factor": 1108.27
+    },
+    {
+      "year": 1981,
+      "month": 9,
+      "factor": 1172.55
+    },
+    {
+      "year": 1981,
+      "month": 10,
+      "factor": 1239.39
+    },
+    {
+      "year": 1981,
+      "month": 11,
+      "factor": 1310.04
+    },
+    {
+      "year": 1981,
+      "month": 12,
+      "factor": 1382.09
+    },
+    {
+      "year": 1982,
+      "month": 1,
+      "factor": 1453.96
+    },
+    {
+      "year": 1982,
+      "month": 2,
+      "factor": 1526.66
+    },
+    {
+      "year": 1982,
+      "month": 3,
+      "factor": 1602.99
+    },
+    {
+      "year": 1982,
+      "month": 4,
+      "factor": 1683.14
+    },
+    {
+      "year": 1982,
+      "month": 5,
+      "factor": 1775.71
+    },
+    {
+      "year": 1982,
+      "month": 6,
+      "factor": 1873.37
+    },
+    {
+      "year": 1982,
+      "month": 7,
+      "factor": 1976.41
+    },
+    {
+      "year": 1982,
+      "month": 8,
+      "factor": 2094.99
+    },
+    {
+      "year": 1982,
+      "month": 9,
+      "factor": 2241.64
+    },
+    {
+      "year": 1982,
+      "month": 10,
+      "factor": 2398.55
+    },
+    {
+      "year": 1982,
+      "month": 11,
+      "factor": 2566.45
+    },
+    {
+      "year": 1982,
+      "month": 12,
+      "factor": 2733.27
+    },
+    {
+      "year": 1983,
+      "month": 1,
+      "factor": 2910.93
+    },
+    {
+      "year": 1983,
+      "month": 2,
+      "factor": 3085.59
+    },
+    {
+      "year": 1983,
+      "month": 3,
+      "factor": 3292.32
+    },
+    {
+      "year": 1983,
+      "month": 4,
+      "factor": 3588.63
+    },
+    {
+      "year": 1983,
+      "month": 5,
+      "factor": 3911.61
+    },
+    {
+      "year": 1983,
+      "month": 6,
+      "factor": 4224.54
+    },
+    {
+      "year": 1983,
+      "month": 7,
+      "factor": 4554.05
+    },
+    {
+      "year": 1983,
+      "month": 8,
+      "factor": 4963.91
+    },
+    {
+      "year": 1983,
+      "month": 9,
+      "factor": 5385.84
+    },
+    {
+      "year": 1983,
+      "month": 10,
+      "factor": 5897.49
+    },
+    {
+      "year": 1983,
+      "month": 11,
+      "factor": 6469.55
+    },
+    {
+      "year": 1983,
+      "month": 12,
+      "factor": 7012.99
+    },
+    {
+      "year": 1984,
+      "month": 1,
+      "factor": 7545.98
+    },
+    {
+      "year": 1984,
+      "month": 2,
+      "factor": 8285.49
+    },
+    {
+      "year": 1984,
+      "month": 3,
+      "factor": 9304.61
+    },
+    {
+      "year": 1984,
+      "month": 4,
+      "factor": 10235.07
+    },
+    {
+      "year": 1984,
+      "month": 5,
+      "factor": 11145.99
+    },
+    {
+      "year": 1984,
+      "month": 6,
+      "factor": 12137.98
+    },
+    {
+      "year": 1984,
+      "month": 7,
+      "factor": 13254.67
+    },
+    {
+      "year": 1984,
+      "month": 8,
+      "factor": 14619.9
+    },
+    {
+      "year": 1984,
+      "month": 9,
+      "factor": 16169.61
+    },
+    {
+      "year": 1984,
+      "month": 10,
+      "factor": 17867.42
+    },
+    {
+      "year": 1984,
+      "month": 11,
+      "factor": 20118.71
+    },
+    {
+      "year": 1984,
+      "month": 12,
+      "factor": 22110.46
+    },
+    {
+      "year": 1985,
+      "month": 1,
+      "factor": 24432.06
+    },
+    {
+      "year": 1985,
+      "month": 2,
+      "factor": 27510.5
+    },
+    {
+      "year": 1985,
+      "month": 3,
+      "factor": 30316.57
+    },
+    {
+      "year": 1985,
+      "month": 4,
+      "factor": 34166.77
+    },
+    {
+      "year": 1985,
+      "month": 5,
+      "factor": 38208.46
+    },
+    {
+      "year": 1985,
+      "month": 6,
+      "factor": 42031.56
+    },
+    {
+      "year": 1985,
+      "month": 7,
+      "factor": 45901.91
+    },
+    {
+      "year": 1985,
+      "month": 8,
+      "factor": 49396.88
+    },
+    {
+      "year": 1985,
+      "month": 9,
+      "factor": 53437.4
+    },
+    {
+      "year": 1985,
+      "month": 10,
+      "factor": 58300.2
+    },
+    {
+      "year": 1985,
+      "month": 11,
+      "factor": 63547.22
+    },
+    {
+      "year": 1985,
+      "month": 12,
+      "factor": 70613.67
+    },
+    {
+      "year": 1986,
+      "month": 1,
+      "factor": 80047.66
+    },
+    {
+      "year": 1986,
+      "month": 2,
+      "factor": 93039.4
+    },
+    {
+      "year": 1986,
+      "month": 3,
+      "factor": 106.4
+    },
+    {
+      "year": 1986,
+      "month": 4,
+      "factor": 106.28
+    },
+    {
+      "year": 1986,
+      "month": 5,
+      "factor": 107.12
+    },
+    {
+      "year": 1986,
+      "month": 6,
+      "factor": 108.61
+    },
+    {
+      "year": 1986,
+      "month": 7,
+      "factor": 109.99
+    },
+    {
+      "year": 1986,
+      "month": 8,
+      "factor": 111.31
+    },
+    {
+      "year": 1986,
+      "month": 9,
+      "factor": 113.18
+    },
+    {
+      "year": 1986,
+      "month": 10,
+      "factor": 115.13
+    },
+    {
+      "year": 1986,
+      "month": 11,
+      "factor": 117.32
+    },
+    {
+      "year": 1986,
+      "month": 12,
+      "factor": 121.17
+    },
+    {
+      "year": 1987,
+      "month": 1,
+      "factor": 129.98
+    },
+    {
+      "year": 1987,
+      "month": 2,
+      "factor": 151.85
+    },
+    {
+      "year": 1987,
+      "month": 3,
+      "factor": 181.61
+    },
+    {
+      "year": 1987,
+      "month": 4,
+      "factor": 207.97
+    },
+    {
+      "year": 1987,
+      "month": 5,
+      "factor": 251.56
+    },
+    {
+      "year": 1987,
+      "month": 6,
+      "factor": 310.53
+    },
+    {
+      "year": 1987,
+      "month": 7,
+      "factor": 366.49
+    },
+    {
+      "year": 1987,
+      "month": 8,
+      "factor": 377.67
+    },
+    {
+      "year": 1987,
+      "month": 9,
+      "factor": 401.69
+    },
+    {
+      "year": 1987,
+      "month": 10,
+      "factor": 424.51
+    },
+    {
+      "year": 1987,
+      "month": 11,
+      "factor": 463.48
+    },
+    {
+      "year": 1987,
+      "month": 12,
+      "factor": 522.99
+    },
+    {
+      "year": 1988,
+      "month": 1,
+      "factor": 596.94
+    },
+    {
+      "year": 1988,
+      "month": 2,
+      "factor": 695.5
+    },
+    {
+      "year": 1988,
+      "month": 3,
+      "factor": 820.42
+    },
+    {
+      "year": 1988,
+      "month": 4,
+      "factor": 951.77
+    },
+    {
+      "year": 1988,
+      "month": 5,
+      "factor": 1135.27
+    },
+    {
+      "year": 1988,
+      "month": 6,
+      "factor": 1337.12
+    },
+    {
+      "year": 1988,
+      "month": 7,
+      "factor": 1598.26
+    },
+    {
+      "year": 1988,
+      "month": 8,
+      "factor": 1982.48
+    },
+    {
+      "year": 1988,
+      "month": 9,
+      "factor": 2392.06
+    },
+    {
+      "year": 1988,
+      "month": 10,
+      "factor": 2966.39
+    },
+    {
+      "year": 1988,
+      "month": 11,
+      "factor": 3774.73
+    },
+    {
+      "year": 1988,
+      "month": 12,
+      "factor": 4790.89
+    },
+    {
+      "year": 1989,
+      "month": 1,
+      "factor": 6.17
+    },
+    {
+      "year": 1989,
+      "month": 2,
+      "factor": 8.805824
+    },
+    {
+      "year": 1989,
+      "month": 3,
+      "factor": 9.698734
+    },
+    {
+      "year": 1989,
+      "month": 4,
+      "factor": 10.28938
+    },
+    {
+      "year": 1989,
+      "month": 5,
+      "factor": 11.04154
+    },
+    {
+      "year": 1989,
+      "month": 6,
+      "factor": 12.13906
+    },
+    {
+      "year": 1989,
+      "month": 7,
+      "factor": 15.15319
+    },
+    {
+      "year": 1989,
+      "month": 8,
+      "factor": 19.51125
+    },
+    {
+      "year": 1989,
+      "month": 9,
+      "factor": 25.23586
+    },
+    {
+      "year": 1989,
+      "month": 10,
+      "factor": 34.30815
+    },
+    {
+      "year": 1989,
+      "month": 11,
+      "factor": 47.21488
+    },
+    {
+      "year": 1989,
+      "month": 12,
+      "factor": 66.77128
+    },
+    {
+      "year": 1990,
+      "month": 1,
+      "factor": 102.527306
+    },
+    {
+      "year": 1990,
+      "month": 2,
+      "factor": 160.055377
+    },
+    {
+      "year": 1990,
+      "month": 3,
+      "factor": 276.54368
+    },
+    {
+      "year": 1990,
+      "month": 4,
+      "factor": 509.72531
+    },
+    {
+      "year": 1990,
+      "month": 5,
+      "factor": 738.082248
+    },
+    {
+      "year": 1990,
+      "month": 6,
+      "factor": 796.16932
+    },
+    {
+      "year": 1990,
+      "month": 7,
+      "factor": 872.20349
+    },
+    {
+      "year": 1990,
+      "month": 8,
+      "factor": 984.89218
+    },
+    {
+      "year": 1990,
+      "month": 9,
+      "factor": 1103.374709
+    },
+    {
+      "year": 1990,
+      "month": 10,
+      "factor": 1244.165321
+    },
+    {
+      "year": 1990,
+      "month": 11,
+      "factor": 1420.836796
+    },
+    {
+      "year": 1990,
+      "month": 12,
+      "factor": 1642.203168
+    },
+    {
+      "year": 1991,
+      "month": 1,
+      "factor": 1942.726347
+    },
+    {
+      "year": 1991,
+      "month": 2,
+      "factor": 2329.523162
+    },
+    {
+      "year": 1991,
+      "month": 3,
+      "factor": 2838.989877
+    },
+    {
+      "year": 1991,
+      "month": 4,
+      "factor": 3173.706783
+    },
+    {
+      "year": 1991,
+      "month": 5,
+      "factor": 3332.709492
+    },
+    {
+      "year": 1991,
+      "month": 6,
+      "factor": 3555.334486
+    },
+    {
+      "year": 1991,
+      "month": 7,
+      "factor": 3940.37721
+    },
+    {
+      "year": 1991,
+      "month": 8,
+      "factor": 4418.739003
+    },
+    {
+      "year": 1991,
+      "month": 9,
+      "factor": 5108.946035
+    },
+    {
+      "year": 1991,
+      "month": 10,
+      "factor": 5906.963405
+    },
+    {
+      "year": 1991,
+      "month": 11,
+      "factor": 7152.15129
+    },
+    {
+      "year": 1991,
+      "month": 12,
+      "factor": 9046.040951
+    },
+    {
+      "year": 1992,
+      "month": 1,
+      "factor": 11230.65984
+    },
+    {
+      "year": 1992,
+      "month": 2,
+      "factor": 14141.64687
+    },
+    {
+      "year": 1992,
+      "month": 3,
+      "factor": 17603.522023
+    },
+    {
+      "year": 1992,
+      "month": 4,
+      "factor": 21409.403484
+    },
+    {
+      "year": 1992,
+      "month": 5,
+      "factor": 25871.12317
+    },
+    {
+      "year": 1992,
+      "month": 6,
+      "factor": 32209.548346
+    },
+    {
+      "year": 1992,
+      "month": 7,
+      "factor": 38925.239176
+    },
+    {
+      "year": 1992,
+      "month": 8,
+      "factor": 47519.931986
+    },
+    {
+      "year": 1992,
+      "month": 9,
+      "factor": 58154.892764
+    },
+    {
+      "year": 1992,
+      "month": 10,
+      "factor": 72100.436048
+    },
+    {
+      "year": 1992,
+      "month": 11,
+      "factor": 90897.019725
+    },
+    {
+      "year": 1992,
+      "month": 12,
+      "factor": 111703.34754
+    },
+    {
+      "year": 1993,
+      "month": 1,
+      "factor": 140277.06384
+    },
+    {
+      "year": 1993,
+      "month": 2,
+      "factor": 180634.7751
+    },
+    {
+      "year": 1993,
+      "month": 3,
+      "factor": 225414.13585
+    },
+    {
+      "year": 1993,
+      "month": 4,
+      "factor": 287583.35452
+    },
+    {
+      "year": 1993,
+      "month": 5,
+      "factor": 369170.75219
+    },
+    {
+      "year": 1993,
+      "month": 6,
+      "factor": 468034.67963
+    },
+    {
+      "year": 1993,
+      "month": 7,
+      "factor": 610176.81184
+    },
+    {
+      "year": 1993,
+      "month": 8,
+      "factor": 799.392641
+    },
+    {
+      "year": 1993,
+      "month": 9,
+      "factor": 1065.910147
+    },
+    {
+      "year": 1993,
+      "month": 10,
+      "factor": 1445.693932
+    },
+    {
+      "year": 1993,
+      "month": 11,
+      "factor": 1938.964701
+    },
+    {
+      "year": 1993,
+      "month": 12,
+      "factor": 2636.991993
+    },
+    {
+      "year": 1994,
+      "month": 1,
+      "factor": 3631.929071
+    },
+    {
+      "year": 1994,
+      "month": 2,
+      "factor": 5132.642163
+    },
+    {
+      "year": 1994,
+      "month": 3,
+      "factor": 7214.955088
+    },
+    {
+      "year": 1994,
+      "month": 4,
+      "factor": 10323.15773
+    },
+    {
+      "year": 1994,
+      "month": 5,
+      "factor": 14747.66314
+    },
+    {
+      "year": 1994,
+      "month": 6,
+      "factor": 21049.3396
+    },
+    {
+      "year": 1994,
+      "month": 7,
+      "factor": 11.346741
+    },
+    {
+      "year": 1994,
+      "month": 8,
+      "factor": 12.036622
+    },
+    {
+      "year": 1994,
+      "month": 9,
+      "factor": 12.693821
+    },
+    {
+      "year": 1994,
+      "month": 10,
+      "factor": 12.885497
+    },
+    {
+      "year": 1994,
+      "month": 11,
+      "factor": 13.125167
+    },
+    {
+      "year": 1994,
+      "month": 12,
+      "factor": 13.554359
+    },
+    {
+      "year": 1995,
+      "month": 1,
+      "factor": 13.851199
+    },
+    {
+      "year": 1995,
+      "month": 2,
+      "factor": 14.082514
+    },
+    {
+      "year": 1995,
+      "month": 3,
+      "factor": 14.22193
+    },
+    {
+      "year": 1995,
+      "month": 4,
+      "factor": 14.422459
+    },
+    {
+      "year": 1995,
+      "month": 5,
+      "factor": 14.69937
+    },
+    {
+      "year": 1995,
+      "month": 6,
+      "factor": 15.077143
+    },
+    {
+      "year": 1995,
+      "month": 7,
+      "factor": 15.351547
+    },
+    {
+      "year": 1995,
+      "month": 8,
+      "factor": 15.729195
+    },
+    {
+      "year": 1995,
+      "month": 9,
+      "factor": 15.889632
+    },
+    {
+      "year": 1995,
+      "month": 10,
+      "factor": 16.07554
+    },
+    {
+      "year": 1995,
+      "month": 11,
+      "factor": 16.300597
+    },
+    {
+      "year": 1995,
+      "month": 12,
+      "factor": 16.546736
+    },
+    {
+      "year": 1996,
+      "month": 1,
+      "factor": 16.819757
+    },
+    {
+      "year": 1996,
+      "month": 2,
+      "factor": 17.065325
+    },
+    {
+      "year": 1996,
+      "month": 3,
+      "factor": 17.186488
+    },
+    {
+      "year": 1996,
+      "month": 4,
+      "factor": 17.236328
+    },
+    {
+      "year": 1996,
+      "month": 5,
+      "factor": 17.396625
+    },
+    {
+      "year": 1996,
+      "month": 6,
+      "factor": 17.619301
+    },
+    {
+      "year": 1996,
+      "month": 7,
+      "factor": 17.853637
+    },
+    {
+      "year": 1996,
+      "month": 8,
+      "factor": 18.06788
+    },
+    {
+      "year": 1996,
+      "month": 9,
+      "factor": 18.158219
+    },
+    {
+      "year": 1996,
+      "month": 10,
+      "factor": 18.16185
+    },
+    {
+      "year": 1996,
+      "month": 11,
+      "factor": 18.230865
+    },
+    {
+      "year": 1996,
+      "month": 12,
+      "factor": 18.292849
+    },
+    {
+      "year": 1997,
+      "month": 1,
+      "factor": 18.353215
+    },
+    {
+      "year": 1997,
+      "month": 2,
+      "factor": 18.501876
+    },
+    {
+      "year": 1997,
+      "month": 3,
+      "factor": 18.585134
+    },
+    {
+      "year": 1997,
+      "month": 4,
+      "factor": 18.711512
+    },
+    {
+      "year": 1997,
+      "month": 5,
+      "factor": 18.823781
+    },
+    {
+      "year": 1997,
+      "month": 6,
+      "factor": 18.844487
+    },
+    {
+      "year": 1997,
+      "month": 7,
+      "factor": 18.910442
+    },
+    {
+      "year": 1997,
+      "month": 8,
+      "factor": 18.94448
+    },
+    {
+      "year": 1997,
+      "month": 9,
+      "factor": 18.938796
+    },
+    {
+      "year": 1997,
+      "month": 10,
+      "factor": 18.957734
+    },
+    {
+      "year": 1997,
+      "month": 11,
+      "factor": 19.012711
+    },
+    {
+      "year": 1997,
+      "month": 12,
+      "factor": 19.04123
+    },
+    {
+      "year": 1998,
+      "month": 1,
+      "factor": 19.149765
+    },
+    {
+      "year": 1998,
+      "month": 2,
+      "factor": 19.312538
+    },
+    {
+      "year": 1998,
+      "month": 3,
+      "factor": 19.416825
+    },
+    {
+      "year": 1998,
+      "month": 4,
+      "factor": 19.511967
+    },
+    {
+      "year": 1998,
+      "month": 5,
+      "factor": 19.59977
+    },
+    {
+      "year": 1998,
+      "month": 6,
+      "factor": 19.740888
+    },
+    {
+      "year": 1998,
+      "month": 7,
+      "factor": 19.770499
+    },
+    {
+      "year": 1998,
+      "month": 8,
+      "factor": 19.715141
+    },
+    {
+      "year": 1998,
+      "month": 9,
+      "factor": 19.618536
+    },
+    {
+      "year": 1998,
+      "month": 10,
+      "factor": 19.557718
+    },
+    {
+      "year": 1998,
+      "month": 11,
+      "factor": 19.579231
+    },
+    {
+      "year": 1998,
+      "month": 12,
+      "factor": 19.543988
+    },
+    {
+      "year": 1999,
+      "month": 1,
+      "factor": 19.626072
+    },
+    {
+      "year": 1999,
+      "month": 2,
+      "factor": 19.753641
+    },
+    {
+      "year": 1999,
+      "month": 3,
+      "factor": 20.008462
+    },
+    {
+      "year": 1999,
+      "month": 4,
+      "factor": 20.26457
+    },
+    {
+      "year": 1999,
+      "month": 5,
+      "factor": 20.359813
+    },
+    {
+      "year": 1999,
+      "month": 6,
+      "factor": 20.369992
+    },
+    {
+      "year": 1999,
+      "month": 7,
+      "factor": 20.38425
+    },
+    {
+      "year": 1999,
+      "month": 8,
+      "factor": 20.535093
+    },
+    {
+      "year": 1999,
+      "month": 9,
+      "factor": 20.648036
+    },
+    {
+      "year": 1999,
+      "month": 10,
+      "factor": 20.728563
+    },
+    {
+      "year": 1999,
+      "month": 11,
+      "factor": 20.927557
+    },
+    {
+      "year": 1999,
+      "month": 12,
+      "factor": 21.124276
+    },
+    {
+      "year": 2000,
+      "month": 1,
+      "factor": 21.280595
+    },
+    {
+      "year": 2000,
+      "month": 2,
+      "factor": 21.410406
+    },
+    {
+      "year": 2000,
+      "month": 3,
+      "factor": 21.421111
+    },
+    {
+      "year": 2000,
+      "month": 4,
+      "factor": 21.448958
+    },
+    {
+      "year": 2000,
+      "month": 5,
+      "factor": 21.468262
+    },
+    {
+      "year": 2000,
+      "month": 6,
+      "factor": 21.457527
+    },
+    {
+      "year": 2000,
+      "month": 7,
+      "factor": 21.521899
+    },
+    {
+      "year": 2000,
+      "month": 8,
+      "factor": 21.821053
+    },
+    {
+      "year": 2000,
+      "month": 9,
+      "factor": 22.085087
+    },
+    {
+      "year": 2000,
+      "month": 10,
+      "factor": 22.180052
+    },
+    {
+      "year": 2000,
+      "month": 11,
+      "factor": 22.21554
+    },
+    {
+      "year": 2000,
+      "month": 12,
+      "factor": 22.279965
+    },
+    {
+      "year": 2001,
+      "month": 1,
+      "factor": 22.402504
+    },
+    {
+      "year": 2001,
+      "month": 2,
+      "factor": 22.575003
+    },
+    {
+      "year": 2001,
+      "month": 3,
+      "factor": 22.68562
+    },
+    {
+      "year": 2001,
+      "month": 4,
+      "factor": 22.79451
+    },
+    {
+      "year": 2001,
+      "month": 5,
+      "factor": 22.985983
+    },
+    {
+      "year": 2001,
+      "month": 6,
+      "factor": 23.117003
+    },
+    {
+      "year": 2001,
+      "month": 7,
+      "factor": 23.255705
+    },
+    {
+      "year": 2001,
+      "month": 8,
+      "factor": 23.513843
+    },
+    {
+      "year": 2001,
+      "month": 9,
+      "factor": 23.699602
+    },
+    {
+      "year": 2001,
+      "month": 10,
+      "factor": 23.80388
+    },
+    {
+      "year": 2001,
+      "month": 11,
+      "factor": 24.027636
+    },
+    {
+      "year": 2001,
+      "month": 12,
+      "factor": 24.337592
+    },
+    {
+      "year": 2002,
+      "month": 1,
+      "factor": 24.51769
+    },
+    {
+      "year": 2002,
+      "month": 2,
+      "factor": 24.780029
+    },
+    {
+      "year": 2002,
+      "month": 3,
+      "factor": 24.856847
+    },
+    {
+      "year": 2002,
+      "month": 4,
+      "factor": 25.010959
+    },
+    {
+      "year": 2002,
+      "month": 5,
+      "factor": 25.181033
+    },
+    {
+      "year": 2002,
+      "month": 6,
+      "factor": 25.203695
+    },
+    {
+      "year": 2002,
+      "month": 7,
+      "factor": 25.357437
+    },
+    {
+      "year": 2002,
+      "month": 8,
+      "factor": 25.649047
+    },
+    {
+      "year": 2002,
+      "month": 9,
+      "factor": 25.869628
+    },
+    {
+      "year": 2002,
+      "month": 10,
+      "factor": 26.084345
+    },
+    {
+      "year": 2002,
+      "month": 11,
+      "factor": 26.493869
+    },
+    {
+      "year": 2002,
+      "month": 12,
+      "factor": 27.392011
+    },
+    {
+      "year": 2003,
+      "month": 1,
+      "factor": 28.131595
+    },
+    {
+      "year": 2003,
+      "month": 2,
+      "factor": 28.826445
+    },
+    {
+      "year": 2003,
+      "month": 3,
+      "factor": 29.247311
+    },
+    {
+      "year": 2003,
+      "month": 4,
+      "factor": 29.647999
+    },
+    {
+      "year": 2003,
+      "month": 5,
+      "factor": 30.057141
+    },
+    {
+      "year": 2003,
+      "month": 6,
+      "factor": 30.354706
+    },
+    {
+      "year": 2003,
+      "month": 7,
+      "factor": 30.336493
+    },
+    {
+      "year": 2003,
+      "month": 8,
+      "factor": 30.348627
+    },
+    {
+      "year": 2003,
+      "month": 9,
+      "factor": 30.403254
+    },
+    {
+      "year": 2003,
+      "month": 10,
+      "factor": 30.65256
+    },
+    {
+      "year": 2003,
+      "month": 11,
+      "factor": 30.772104
+    },
+    {
+      "year": 2003,
+      "month": 12,
+      "factor": 30.88596
+    },
+    {
+      "year": 2004,
+      "month": 1,
+      "factor": 31.052744
+    },
+    {
+      "year": 2004,
+      "month": 2,
+      "factor": 31.310481
+    },
+    {
+      "year": 2004,
+      "month": 3,
+      "factor": 31.432591
+    },
+    {
+      "year": 2004,
+      "month": 4,
+      "factor": 31.611756
+    },
+    {
+      "year": 2004,
+      "month": 5,
+      "factor": 31.741364
+    },
+    {
+      "year": 2004,
+      "month": 6,
+      "factor": 31.868329
+    },
+    {
+      "year": 2004,
+      "month": 7,
+      "factor": 32.02767
+    },
+    {
+      "year": 2004,
+      "month": 8,
+      "factor": 32.261471
+    },
+    {
+      "year": 2004,
+      "month": 9,
+      "factor": 32.422778
+    },
+    {
+      "year": 2004,
+      "month": 10,
+      "factor": 32.477896
+    },
+    {
+      "year": 2004,
+      "month": 11,
+      "factor": 32.533108
+    },
+    {
+      "year": 2004,
+      "month": 12,
+      "factor": 32.676253
+    },
+    {
+      "year": 2005,
+      "month": 1,
+      "factor": 32.957268
+    },
+    {
+      "year": 2005,
+      "month": 2,
+      "factor": 33.145124
+    },
+    {
+      "year": 2005,
+      "month": 3,
+      "factor": 33.290962
+    },
+    {
+      "year": 2005,
+      "month": 4,
+      "factor": 33.533986
+    },
+    {
+      "year": 2005,
+      "month": 5,
+      "factor": 33.839145
+    },
+    {
+      "year": 2005,
+      "month": 6,
+      "factor": 34.076019
+    },
+    {
+      "year": 2005,
+      "month": 7,
+      "factor": 34.038535
+    },
+    {
+      "year": 2005,
+      "month": 8,
+      "factor": 34.048746
+    },
+    {
+      "year": 2005,
+      "month": 9,
+      "factor": 34.048746
+    },
+    {
+      "year": 2005,
+      "month": 10,
+      "factor": 34.099819
+    },
+    {
+      "year": 2005,
+      "month": 11,
+      "factor": 34.297597
+    },
+    {
+      "year": 2005,
+      "month": 12,
+      "factor": 34.482804
+    },
+    {
+      "year": 2006,
+      "month": 1,
+      "factor": 34.620735
+    },
+    {
+      "year": 2006,
+      "month": 2,
+      "factor": 34.752293
+    },
+    {
+      "year": 2006,
+      "month": 3,
+      "factor": 34.832223
+    },
+    {
+      "year": 2006,
+      "month": 4,
+      "factor": 34.92627
+    },
+    {
+      "year": 2006,
+      "month": 5,
+      "factor": 34.968181
+    },
+    {
+      "year": 2006,
+      "month": 6,
+      "factor": 35.013639
+    },
+    {
+      "year": 2006,
+      "month": 7,
+      "factor": 34.989129
+    },
+    {
+      "year": 2006,
+      "month": 8,
+      "factor": 35.027617
+    },
+    {
+      "year": 2006,
+      "month": 9,
+      "factor": 35.020611
+    },
+    {
+      "year": 2006,
+      "month": 10,
+      "factor": 35.076643
+    },
+    {
+      "year": 2006,
+      "month": 11,
+      "factor": 35.227472
+    },
+    {
+      "year": 2006,
+      "month": 12,
+      "factor": 35.375427
+    },
+    {
+      "year": 2007,
+      "month": 1,
+      "factor": 35.594754
+    },
+    {
+      "year": 2007,
+      "month": 2,
+      "factor": 35.769168
+    },
+    {
+      "year": 2007,
+      "month": 3,
+      "factor": 35.919398
+    },
+    {
+      "year": 2007,
+      "month": 4,
+      "factor": 36.077443
+    },
+    {
+      "year": 2007,
+      "month": 5,
+      "factor": 36.171244
+    },
+    {
+      "year": 2007,
+      "month": 6,
+      "factor": 36.265289
+    },
+    {
+      "year": 2007,
+      "month": 7,
+      "factor": 36.377711
+    },
+    {
+      "year": 2007,
+      "month": 8,
+      "factor": 36.494119
+    },
+    {
+      "year": 2007,
+      "month": 9,
+      "factor": 36.709434
+    },
+    {
+      "year": 2007,
+      "month": 10,
+      "factor": 36.801207
+    },
+    {
+      "year": 2007,
+      "month": 11,
+      "factor": 36.91161
+    },
+    {
+      "year": 2007,
+      "month": 12,
+      "factor": 37.070329
+    },
+    {
+      "year": 2008,
+      "month": 1,
+      "factor": 37.429911
+    },
+    {
+      "year": 2008,
+      "month": 2,
+      "factor": 37.688177
+    },
+    {
+      "year": 2008,
+      "month": 3,
+      "factor": 37.86908
+    },
+    {
+      "year": 2008,
+      "month": 4,
+      "factor": 38.062212
+    },
+    {
+      "year": 2008,
+      "month": 5,
+      "factor": 38.30581
+    },
+    {
+      "year": 2008,
+      "month": 6,
+      "factor": 38.673545
+    },
+    {
+      "year": 2008,
+      "month": 7,
+      "factor": 39.025474
+    },
+    {
+      "year": 2008,
+      "month": 8,
+      "factor": 39.251821
+    },
+    {
+      "year": 2008,
+      "month": 9,
+      "factor": 39.334249
+    },
+    {
+      "year": 2008,
+      "month": 10,
+      "factor": 39.39325
+    },
+    {
+      "year": 2008,
+      "month": 11,
+      "factor": 39.590216
+    },
+    {
+      "year": 2008,
+      "month": 12,
+      "factor": 39.740658
+    },
+    {
+      "year": 2009,
+      "month": 1,
+      "factor": 39.855905
+    },
+    {
+      "year": 2009,
+      "month": 2,
+      "factor": 40.110982
+    },
+    {
+      "year": 2009,
+      "month": 3,
+      "factor": 40.235326
+    },
+    {
+      "year": 2009,
+      "month": 4,
+      "factor": 40.315796
+    },
+    {
+      "year": 2009,
+      "month": 5,
+      "factor": 40.537532
+    },
+    {
+      "year": 2009,
+      "month": 6,
+      "factor": 40.780757
+    },
+    {
+      "year": 2009,
+      "month": 7,
+      "factor": 40.952036
+    },
+    {
+      "year": 2009,
+      "month": 8,
+      "factor": 41.046225
+    },
+    {
+      "year": 2009,
+      "month": 9,
+      "factor": 41.079061
+    },
+    {
+      "year": 2009,
+      "month": 10,
+      "factor": 41.144787
+    },
+    {
+      "year": 2009,
+      "month": 11,
+      "factor": 41.243534
+    },
+    {
+      "year": 2009,
+      "month": 12,
+      "factor": 41.396135
+    },
+    {
+      "year": 2010,
+      "month": 1,
+      "factor": 41.495485
+    },
+    {
+      "year": 2010,
+      "month": 2,
+      "factor": 41.860645
+    },
+    {
+      "year": 2010,
+      "month": 3,
+      "factor": 42.153669
+    },
+    {
+      "year": 2010,
+      "month": 4,
+      "factor": 42.45296
+    },
+    {
+      "year": 2010,
+      "month": 5,
+      "factor": 42.762866
+    },
+    {
+      "year": 2010,
+      "month": 6,
+      "factor": 42.946746
+    },
+    {
+      "year": 2010,
+      "month": 7,
+      "factor": 42.899504
+    },
+    {
+      "year": 2010,
+      "month": 8,
+      "factor": 42.869474
+    },
+    {
+      "year": 2010,
+      "month": 9,
+      "factor": 42.839465
+    },
+    {
+      "year": 2010,
+      "month": 10,
+      "factor": 43.070798
+    },
+    {
+      "year": 2010,
+      "month": 11,
+      "factor": 43.467049
+    },
+    {
+      "year": 2010,
+      "month": 12,
+      "factor": 43.914759
+    },
+    {
+      "year": 2011,
+      "month": 1,
+      "factor": 44.178247
+    },
+    {
+      "year": 2011,
+      "month": 2,
+      "factor": 44.593522
+    },
+    {
+      "year": 2011,
+      "month": 3,
+      "factor": 44.834327
+    },
+    {
+      "year": 2011,
+      "month": 4,
+      "factor": 45.130233
+    },
+    {
+      "year": 2011,
+      "month": 5,
+      "factor": 45.45517
+    },
+    {
+      "year": 2011,
+      "month": 6,
+      "factor": 45.714264
+    },
+    {
+      "year": 2011,
+      "month": 7,
+      "factor": 45.814835
+    },
+    {
+      "year": 2011,
+      "month": 8,
+      "factor": 45.814835
+    },
+    {
+      "year": 2011,
+      "month": 9,
+      "factor": 46.007257
+    },
+    {
+      "year": 2011,
+      "month": 10,
+      "factor": 46.214289
+    },
+    {
+      "year": 2011,
+      "month": 11,
+      "factor": 46.362174
+    },
+    {
+      "year": 2011,
+      "month": 12,
+      "factor": 46.626438
+    },
+    {
+      "year": 2012,
+      "month": 1,
+      "factor": 46.864232
+    },
+    {
+      "year": 2012,
+      "month": 2,
+      "factor": 47.103239
+    },
+    {
+      "year": 2012,
+      "month": 3,
+      "factor": 47.286941
+    },
+    {
+      "year": 2012,
+      "month": 4,
+      "factor": 47.372057
+    },
+    {
+      "year": 2012,
+      "month": 5,
+      "factor": 47.675238
+    },
+    {
+      "year": 2012,
+      "month": 6,
+      "factor": 47.937451
+    },
+    {
+      "year": 2012,
+      "month": 7,
+      "factor": 48.062088
+    },
+    {
+      "year": 2012,
+      "month": 8,
+      "factor": 48.268754
+    },
+    {
+      "year": 2012,
+      "month": 9,
+      "factor": 48.485963
+    },
+    {
+      "year": 2012,
+      "month": 10,
+      "factor": 48.791424
+    },
+    {
+      "year": 2012,
+      "month": 11,
+      "factor": 49.137843
+    },
+    {
+      "year": 2012,
+      "month": 12,
+      "factor": 49.403187
+    },
+    {
+      "year": 2013,
+      "month": 1,
+      "factor": 49.76877
+    },
+    {
+      "year": 2013,
+      "month": 2,
+      "factor": 50.226642
+    },
+    {
+      "year": 2013,
+      "month": 3,
+      "factor": 50.48782
+    },
+    {
+      "year": 2013,
+      "month": 4,
+      "factor": 50.790746
+    },
+    {
+      "year": 2013,
+      "month": 5,
+      "factor": 51.090411
+    },
+    {
+      "year": 2013,
+      "month": 6,
+      "factor": 51.269227
+    },
+    {
+      "year": 2013,
+      "month": 7,
+      "factor": 51.41278
+    },
+    {
+      "year": 2013,
+      "month": 8,
+      "factor": 51.345943
+    },
+    {
+      "year": 2013,
+      "month": 9,
+      "factor": 51.428096
+    },
+    {
+      "year": 2013,
+      "month": 10,
+      "factor": 51.566951
+    },
+    {
+      "year": 2013,
+      "month": 11,
+      "factor": 51.881509
+    },
+    {
+      "year": 2013,
+      "month": 12,
+      "factor": 52.161669
+    },
+    {
+      "year": 2014,
+      "month": 1,
+      "factor": 52.537233
+    },
+    {
+      "year": 2014,
+      "month": 2,
+      "factor": 52.868217
+    },
+    {
+      "year": 2014,
+      "month": 3,
+      "factor": 53.206573
+    },
+    {
+      "year": 2014,
+      "month": 4,
+      "factor": 53.642866
+    },
+    {
+      "year": 2014,
+      "month": 5,
+      "factor": 54.06128
+    },
+    {
+      "year": 2014,
+      "month": 6,
+      "factor": 54.385647
+    },
+    {
+      "year": 2014,
+      "month": 7,
+      "factor": 54.527049
+    },
+    {
+      "year": 2014,
+      "month": 8,
+      "factor": 54.597934
+    },
+    {
+      "year": 2014,
+      "month": 9,
+      "factor": 54.69621
+    },
+    {
+      "year": 2014,
+      "month": 10,
+      "factor": 54.964221
+    },
+    {
+      "year": 2014,
+      "month": 11,
+      "factor": 55.173085
+    },
+    {
+      "year": 2014,
+      "month": 12,
+      "factor": 55.465502
+    },
+    {
+      "year": 2015,
+      "month": 1,
+      "factor": 55.809388
+    },
+    {
+      "year": 2015,
+      "month": 2,
+      "factor": 56.635366
+    },
+    {
+      "year": 2015,
+      "month": 3,
+      "factor": 57.292336
+    },
+    {
+      "year": 2015,
+      "month": 4,
+      "factor": 58.15745
+    },
+    {
+      "year": 2015,
+      "month": 5,
+      "factor": 58.570367
+    },
+    {
+      "year": 2015,
+      "month": 6,
+      "factor": 59.150213
+    },
+    {
+      "year": 2015,
+      "month": 7,
+      "factor": 59.605669
+    },
+    {
+      "year": 2015,
+      "month": 8,
+      "factor": 59.951381
+    },
+    {
+      "year": 2015,
+      "month": 9,
+      "factor": 60.101259
+    },
+    {
+      "year": 2015,
+      "month": 10,
+      "factor": 60.407775
+    },
+    {
+      "year": 2015,
+      "month": 11,
+      "factor": 60.872914
+    },
+    {
+      "year": 2015,
+      "month": 12,
+      "factor": 61.548603
+    },
+    {
+      "year": 2016,
+      "month": 1,
+      "factor": 62.10254
+    },
+    {
+      "year": 2016,
+      "month": 2,
+      "factor": 63.040288
+    },
+    {
+      "year": 2016,
+      "month": 3,
+      "factor": 63.63917
+    },
+    {
+      "year": 2016,
+      "month": 4,
+      "factor": 63.919182
+    },
+    {
+      "year": 2016,
+      "month": 5,
+      "factor": 64.328264
+    },
+    {
+      "year": 2016,
+      "month": 6,
+      "factor": 64.95868
+    },
+    {
+      "year": 2016,
+      "month": 7,
+      "factor": 65.263985
+    },
+    {
+      "year": 2016,
+      "month": 8,
+      "factor": 65.681674
+    },
+    {
+      "year": 2016,
+      "month": 9,
+      "factor": 65.885287
+    },
+    {
+      "year": 2016,
+      "month": 10,
+      "factor": 65.937995
+    },
+    {
+      "year": 2016,
+      "month": 11,
+      "factor": 66.050089
+    },
+    {
+      "year": 2016,
+      "month": 12,
+      "factor": 66.096324
+    },
+    {
+      "year": 2017,
+      "month": 1,
+      "factor": 66.188858
+    },
+    {
+      "year": 2017,
+      "month": 2,
+      "factor": 66.466851
+    },
+    {
+      "year": 2017,
+      "month": 3,
+      "factor": 66.626371
+    },
+    {
+      "year": 2017,
+      "month": 4,
+      "factor": 66.839575
+    },
+    {
+      "year": 2017,
+      "month": 5,
+      "factor": 66.893046
+    },
+    {
+      "year": 2017,
+      "month": 6,
+      "factor": 67.13386
+    },
+    {
+      "year": 2017,
+      "month": 7,
+      "factor": 66.932458
+    },
+    {
+      "year": 2017,
+      "month": 8,
+      "factor": 67.046243
+    },
+    {
+      "year": 2017,
+      "month": 9,
+      "factor": 67.026129
+    },
+    {
+      "year": 2017,
+      "month": 10,
+      "factor": 67.012723
+    },
+    {
+      "year": 2017,
+      "month": 11,
+      "factor": 67.26067
+    },
+    {
+      "year": 2017,
+      "month": 12,
+      "factor": 67.381739
+    },
+    {
+      "year": 2018,
+      "month": 1,
+      "factor": 67.556931
+    },
+    {
+      "year": 2018,
+      "month": 2,
+      "factor": 67.712311
+    },
+    {
+      "year": 2018,
+      "month": 3,
+      "factor": 67.834193
+    },
+    {
+      "year": 2018,
+      "month": 4,
+      "factor": 67.881676
+    },
+    {
+      "year": 2018,
+      "month": 5,
+      "factor": 68.024227
+    },
+    {
+      "year": 2018,
+      "month": 6,
+      "factor": 68.316731
+    },
+    {
+      "year": 2018,
+      "month": 7,
+      "factor": 69.29366
+    },
+    {
+      "year": 2018,
+      "month": 8,
+      "factor": 69.466894
+    },
+    {
+      "year": 2018,
+      "month": 9,
+      "factor": 69.466894
+    },
+    {
+      "year": 2018,
+      "month": 10,
+      "factor": 69.675294
+    },
+    {
+      "year": 2018,
+      "month": 11,
+      "factor": 69.953995
+    },
+    {
+      "year": 2018,
+      "month": 12,
+      "factor": 69.77911
+    },
+    {
+      "year": 2019,
+      "month": 1,
+      "factor": 69.8768
+    },
+    {
+      "year": 2019,
+      "month": 2,
+      "factor": 70.128356
+    },
+    {
+      "year": 2019,
+      "month": 3,
+      "factor": 70.507049
+    },
+    {
+      "year": 2019,
+      "month": 4,
+      "factor": 71.049953
+    },
+    {
+      "year": 2019,
+      "month": 5,
+      "factor": 71.476252
+    },
+    {
+      "year": 2019,
+      "month": 6,
+      "factor": 71.583466
+    },
+    {
+      "year": 2019,
+      "month": 7,
+      "factor": 71.590624
+    },
+    {
+      "year": 2019,
+      "month": 8,
+      "factor": 71.662214
+    },
+    {
+      "year": 2019,
+      "month": 9,
+      "factor": 71.748208
+    },
+    {
+      "year": 2019,
+      "month": 10,
+      "factor": 71.712333
+    },
+    {
+      "year": 2019,
+      "month": 11,
+      "factor": 71.741017
+    },
+    {
+      "year": 2019,
+      "month": 12,
+      "factor": 72.128418
+    },
+    {
+      "year": 2020,
+      "month": 1,
+      "factor": 73.008384
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "factor": 73.147099
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "factor": 73.271449
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "factor": 73.403337
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "factor": 73.234509
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "factor": 73.051422
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "factor": 73.270576
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "factor": 73.592966
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "factor": 73.8579
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "factor": 74.500463
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "factor": 75.163517
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "factor": 75.87757
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "factor": 76.985382
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "factor": 77.193242
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "factor": 77.826226
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "factor": 78.495531
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "factor": 78.793814
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "factor": 79.550234
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "factor": 80.027535
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "factor": 80.843815
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "factor": 81.55524
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "factor": 82.533902
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "factor": 83.491295
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "factor": 84.192621
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "factor": 84.807227
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "factor": 85.375435
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "factor": 86.229189
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "factor": 87.703708
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "factor": 88.615826
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "factor": 89.014597
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "factor": 89.566487
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "factor": 89.029088
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "factor": 88.753097
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "factor": 88.469087
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "factor": 88.884891
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "factor": 89.222653
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "factor": 89.838289
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "factor": 90.251545
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "factor": 90.946481
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "factor": 91.528538
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "factor": 92.013639
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "factor": 92.344888
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "factor": 92.252543
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "factor": 92.169515
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "factor": 92.353854
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "factor": 92.455443
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "factor": 92.566389
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "factor": 92.658955
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "factor": 93.168579
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "factor": 93.699639
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "factor": 94.458606
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "factor": 94.638077
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "factor": 94.988237
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "factor": 95.425182
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "factor": 95.663744
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "factor": 95.912469
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "factor": 95.778191
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "factor": 96.237926
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "factor": 96.824977
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "factor": 97.144499
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "factor": 97.610792
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "factor": 97.610792
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "factor": 99.055431
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "factor": 99.560613
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "factor": 100.038503
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "factor": 100.388637
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "factor": 100.61953
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "factor": 100.830831
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "factor": 100.619086
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "factor": 101.142305
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "factor": 101.172647
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "factor": 101.202998
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "factor": 101.415524
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "factor": 101.811044
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "factor": 102.381185
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "factor": 103.312853
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "factor": 104.149687
+    }
+  ]
+}

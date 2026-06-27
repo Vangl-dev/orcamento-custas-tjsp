@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { CircleHelp, FileDown, ClipboardCopy } from 'lucide-react'
 import {
   LEGAL_INTEREST_SOURCE_LABEL,
@@ -92,12 +93,16 @@ export default function MonetaryCorrectionPanel({
   const totalAtualizado = resultado.valorCorrigido + resultadoJuros.juros
   const canExport = !resultado.erro && !resultadoJuros.erro
 
+  const [copiado, setCopiado] = useState(false)
+
   const gerarMemoriaPeticao = async () => {
     const hoje = new Date().toLocaleDateString('pt-BR')
-    const texto = `Conforme memoria de calculo gerada pelo TJSP Toolkit, o debito atualizado ate ${hoje} corresponde a ${formatCurrency(totalAtualizado)}, composto por principal de ${valorDisplay || 'nao informado'}, correcao monetaria de ${formatCurrency(resultado.diferenca)}, calculada pela Tabela Pratica do Tribunal de Justica de Sao Paulo (IPCA-E), e juros legais de ${formatCurrency(resultadoJuros.juros}, calculados conforme o art. 406 do Codigo Civil e Taxa Legal divulgada pelo Banco Central do Brasil.`
+    const texto = `Conforme memoria de calculo gerada pelo TJSP Toolkit, o debito atualizado ate ${hoje} corresponde a ${formatCurrency(totalAtualizado)}, composto por principal de ${valorDisplay || 'nao informado'}, correcao monetaria de ${formatCurrency(resultado.diferenca)}, calculada pela Tabela Pratica do Tribunal de Justica de Sao Paulo (IPCA-E), e juros legais de ${formatCurrency(resultadoJuros.juros)}, calculados conforme o art. 406 do Codigo Civil e Taxa Legal divulgada pelo Banco Central do Brasil.`
 
     try {
       await navigator.clipboard.writeText(texto)
+      setCopiado(true)
+      setTimeout(() => setCopiado(false), 2000)
     } catch {
       // silently fail
     }
@@ -106,12 +111,12 @@ export default function MonetaryCorrectionPanel({
   return (
     <section className="hero-card">
       <div style={{ width: '100%' }}>
-        <span className="hero-badge">Tabela prática</span>
+        <span className="hero-badge">Tabela Pratica do TJSP</span>
 
-        <h2>Correção Monetária</h2>
+        <h2>Correcao Monetaria</h2>
 
         <p>
-          Atualização pela tabela prática do TJSP, com juros legais em separado.
+          Atualizacao pela Tabela Pratica do Tribunal de Justica de Sao Paulo (IPCA-E), com juros legais em separado.
         </p>
 
         <div className="update-status">
@@ -122,7 +127,7 @@ export default function MonetaryCorrectionPanel({
                 : ''
             }
           >
-            TJSP até {monthBounds.max ? formatMonthLabel(monthBounds.max) : '--'}
+            Tabela Pratica do TJSP (IPCA-E) ate {monthBounds.max ? formatMonthLabel(monthBounds.max) : '--'}
           </span>
 
           <span
@@ -310,8 +315,24 @@ export default function MonetaryCorrectionPanel({
           type="button"
           onClick={limparCalculo}
         >
-          Novo cálculo
+          Novo calculo
         </button>
+
+        <button
+          className="primary-button export-button"
+          disabled={!canExport}
+          type="button"
+          onClick={gerarMemoriaPeticao}
+        >
+          <ClipboardCopy size={18} aria-hidden="true" />
+          Copiar memoria para peticao
+        </button>
+
+        {copiado && (
+          <span className="field-warning" style={{ color: '#86efac', marginTop: '8px', display: 'block' }}>
+            Copiado!
+          </span>
+        )}
 
         {(resultado.erro || resultadoJuros.erro) && (
           <p className="field-warning">
@@ -320,12 +341,12 @@ export default function MonetaryCorrectionPanel({
         )}
 
         <div className="source-note">
-          <strong>Correção:</strong>{' '}
+          <strong>Correcao:</strong>{' '}
           <a
             href={correctionMetadata?.sourceUrl ?? '#'}
             target="_blank"
           >
-            {correctionMetadata?.sourceLabel ?? 'Tabela Prática TJSP'}
+            {correctionMetadata?.sourceLabel ?? 'Tabela Pratica do TJSP (IPCA-E)'}
           </a>
           <br />
           <strong>Juros:</strong>{' '}

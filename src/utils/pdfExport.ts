@@ -127,7 +127,11 @@ function drawSummaryBox(doc: jsPDF, y: number, lines: Array<{ label: string; val
     doc.text(line.label, 20, innerY)
 
     doc.setFont('helvetica', line.bold ? 'bold' : 'normal')
-    doc.setTextColor(line.bold ? COLORS.primary : COLORS.dark)
+    if (line.bold) {
+      doc.setTextColor(...COLORS.primary)
+    } else {
+      doc.setTextColor(...COLORS.dark)
+    }
     doc.text(line.value, 72, innerY)
     innerY += 7
   }

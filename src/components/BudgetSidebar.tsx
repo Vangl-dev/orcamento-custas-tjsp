@@ -105,7 +105,7 @@ export default function BudgetSidebar({
         className="export-button"
         onClick={limparCalculo}
       >
-        🧹 Limpar cálculo
+        🧹 Novo cálculo
       </button>
       <div
         style={{

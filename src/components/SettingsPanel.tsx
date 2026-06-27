@@ -187,9 +187,24 @@ export default function SettingsPanel({
           </h3>
 
           {correctionError ? (
-            <p style={{ color: '#f87171', marginTop: '8px', fontSize: '0.875rem' }}>
-              {correctionError}
-            </p>
+            <div style={{ marginTop: '10px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  marginBottom: '6px',
+                }}
+              >
+                <span style={{ color: '#f87171', fontSize: '1rem' }}>&#10060;</span>
+                <span style={{ color: '#f87171', fontWeight: 500, fontSize: '0.875rem' }}>
+                  Dados inválidos
+                </span>
+              </div>
+              <p style={{ color: '#fca5a5', margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
+                {correctionError}
+              </p>
+            </div>
           ) : meta ? (
             <div
               style={{
@@ -200,6 +215,19 @@ export default function SettingsPanel({
                 color: '#cbd5e1',
               }}
             >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  marginBottom: '4px',
+                }}
+              >
+                <span style={{ color: '#86efac', fontSize: '1rem' }}>&#9989;</span>
+                <span style={{ color: '#86efac', fontWeight: 500 }}>
+                  Dados válidos
+                </span>
+              </div>
               <div>
                 <strong style={{ color: '#94a3b8' }}>Fonte:</strong>{' '}
                 {meta.source}

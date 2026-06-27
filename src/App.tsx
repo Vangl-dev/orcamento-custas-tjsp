@@ -38,7 +38,7 @@ function App() {
         setCorrectionError(
           err instanceof Error
             ? err.message
-            : 'Erro ao carregar tabela de correção.',
+            : 'Erro ao carregar os dados da tabela de correção.',
         ),
       )
   }, [])
@@ -174,9 +174,8 @@ https://vangl-dev.github.io/orcamento-custas-tjsp
 const copiarMemoria = async () => {
   try {
     await navigator.clipboard.writeText(memoriaCalculo)
-    alert('Memória copiada!')
   } catch {
-    alert('Não foi possível copiar.')
+    // silently fail - clipboard may not be available
   }
 } 
 
@@ -185,9 +184,16 @@ const limparCalculo = () => {
   setValorCausaDisplay('')
   setValorPrestacao('')
   setValorApelacao('')
+  setValorCorrecaoDisplay('')
+  setTermoInicial('2025-05')
+  setTermoFinal('2026-05')
+  setJurosDataInicial('2025-05-01')
+  setJurosDataFinal('2026-05-31')
+  setIncluirCitacoes(false)
   setPostalQtd(0)
   setOficialQtd(0)
   setTipoOficial('deslocamento')
+  setActiveTab('custas')
 }
   return (
     <div className="app-shell">
@@ -342,6 +348,7 @@ const limparCalculo = () => {
               formatCurrency={formatCurrency}
               correctionFactors={factors}
               correctionMetadata={correctionTable?.metadata ?? null}
+              limparCalculo={limparCalculo}
             />
           )}
         </section>

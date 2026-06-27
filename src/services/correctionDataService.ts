@@ -28,7 +28,7 @@ export async function loadCorrectionData(): Promise<CorrectionTableData> {
 
   if (!response.ok) {
     throw new Error(
-      `Falha ao carregar tabela de correção: ${response.status}`,
+      'Não foi possível carregar a tabela de correção. Verifique se o arquivo de dados está disponível.',
     )
   }
 
@@ -45,11 +45,11 @@ export async function loadCorrectionData(): Promise<CorrectionTableData> {
     typeof metadata.sourceUrl !== 'string' ||
     typeof metadata.sourceLabel !== 'string'
   ) {
-    throw new Error('Estrutura de metadata inválida no correction-table.json')
+    throw new Error('Tabela prática com estrutura de metadados inválida.')
   }
 
-  if (!Array.isArray(factors)) {
-    throw new Error('Campo "factors" inválido no correction-table.json')
+  if (!Array.isArray(factors) || factors.length === 0) {
+    throw new Error('Tabela prática não contém dados de fatores.')
   }
 
   for (const f of factors) {
@@ -59,16 +59,50 @@ export async function loadCorrectionData(): Promise<CorrectionTableData> {
       typeof f.factor !== 'number'
     ) {
       throw new Error(
-        `Fator inválido encontrado: ${JSON.stringify(f)}`,
+        `Tabela prática contém registro inválido: ano=${f.year}, mês=${f.month}.`,
+      )
+    }
+
+    if (f.month < 1 || f.month > 12) {
+      throw new Error(
+        `Tabela prática contém mês inválido (${f.month}) no registro de ${f.year}.`,
+      )
+    }
+
+    if (f.factor <= 0) {
+      throw new Error(
+        `Tabela prática contém fator inválido (${f.factor}) em ${f.month}/${f.year}. O fator deve ser maior que zero.`,
+      )
+    }
+  }
+
+  const sorted = [...factors].sort(
+    (a, b) => a.year - b.year || a.month - b.month,
+  )
+
+  for (let i = 1; i < sorted.length; i++) {
+    const prev = sorted[i - 1]
+    const curr = sorted[i]
+
+    if (prev.year === curr.year && prev.month === curr.month) {
+      throw new Error(
+        `Tabela prática contém meses duplicados: ${curr.month}/${curr.year}.`,
+      )
+    }
+
+    const expectedMonth = prev.month === 12 ? 1 : prev.month + 1
+    const expectedYear = prev.month === 12 ? prev.year + 1 : prev.year
+
+    if (curr.year !== expectedYear || curr.month !== expectedMonth) {
+      throw new Error(
+        `Tabela prática com descontinuidade entre ${prev.month}/${prev.year} e ${curr.month}/${curr.year}.`,
       )
     }
   }
 
   cachedData = {
     metadata,
-    factors: [...factors].sort(
-      (a, b) => a.year - b.year || a.month - b.month,
-    ),
+    factors: sorted,
   }
 
   return cachedData

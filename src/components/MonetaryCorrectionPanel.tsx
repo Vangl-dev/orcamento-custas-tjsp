@@ -1,4 +1,4 @@
-import { CircleHelp, FileDown } from 'lucide-react'
+import { CircleHelp, FileDown, ClipboardCopy } from 'lucide-react'
 import {
   LEGAL_INTEREST_SOURCE_LABEL,
   LEGAL_INTEREST_SOURCE_URL,
@@ -32,6 +32,7 @@ type Props = {
   formatCurrency: (value: number) => string
   correctionFactors: CorrectionFactor[]
   correctionMetadata: CorrectionTableMetadata | null
+  limparCalculo: () => void
 }
 
 const legalInterestBounds = getLegalInterestMonthBounds()
@@ -85,10 +86,22 @@ export default function MonetaryCorrectionPanel({
   formatCurrency,
   correctionFactors,
   correctionMetadata,
+  limparCalculo,
 }: Props) {
   const monthBounds = getMonthBounds(correctionFactors)
   const totalAtualizado = resultado.valorCorrigido + resultadoJuros.juros
   const canExport = !resultado.erro && !resultadoJuros.erro
+
+  const gerarMemoriaPeticao = async () => {
+    const hoje = new Date().toLocaleDateString('pt-BR')
+    const texto = `Conforme memoria de calculo gerada pelo TJSP Toolkit, o debito atualizado ate ${hoje} corresponde a ${formatCurrency(totalAtualizado)}, composto por principal de ${valorDisplay || 'nao informado'}, correcao monetaria de ${formatCurrency(resultado.diferenca)}, calculada pela Tabela Pratica do Tribunal de Justica de Sao Paulo (IPCA-E), e juros legais de ${formatCurrency(resultadoJuros.juros}, calculados conforme o art. 406 do Codigo Civil e Taxa Legal divulgada pelo Banco Central do Brasil.`
+
+    try {
+      await navigator.clipboard.writeText(texto)
+    } catch {
+      // silently fail
+    }
+  }
 
   return (
     <section className="hero-card">
@@ -282,11 +295,22 @@ export default function MonetaryCorrectionPanel({
               })),
               fonteCorrecao: correctionMetadata?.sourceLabel ?? 'Tabela Prática TJSP',
               fonteJuros: LEGAL_INTEREST_SOURCE_LABEL,
+              versaoTabela: correctionMetadata?.version,
+              fonteTabela: correctionMetadata?.source,
+              versaoJuros: undefined,
             })
           }
         >
           <FileDown size={18} aria-hidden="true" />
           Exportar PDF
+        </button>
+
+        <button
+          className="export-button"
+          type="button"
+          onClick={limparCalculo}
+        >
+          Novo cálculo
         </button>
 
         {(resultado.erro || resultadoJuros.erro) && (

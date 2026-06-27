@@ -10,7 +10,7 @@ export const LEGAL_INTEREST_SOURCE_URL =
   'https://api.bcb.gov.br/dados/serie/bcdata.sgs.29543/dados?formato=json'
 
 export const LEGAL_INTEREST_SOURCE_LABEL =
-  'Taxa Legal mensal, Banco Central do Brasil, SGS 29543'
+  'Juros legais — Art. 406 do Código Civil · Taxa Legal divulgada pelo Banco Central do Brasil (Série SGS 29543)'
 
 const baseLegalInterestRates: LegalInterestRate[] = [
   { year: 2024, month: 8, monthlyRate: 0.006053 },

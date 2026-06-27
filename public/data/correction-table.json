@@ -4,7 +4,7 @@
     "updatedAt": "2026-06-25",
     "source": "AASP",
     "sourceUrl": "https://api.tjsp.jus.br/Handlers/Handler/FileFetch.ashx?codigo=189280",
-    "sourceLabel": "Tabela Prática TJSP, arquivo 189280"
+    "sourceLabel": "Tabela Prática do Tribunal de Justiça de São Paulo (IPCA-E)"
   },
   "factors": [
     {

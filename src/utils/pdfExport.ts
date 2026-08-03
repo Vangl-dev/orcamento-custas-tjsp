@@ -273,7 +273,7 @@ export function exportCorrectionPdf(data: CorrectionExportData) {
 
   ensureSectionSpace(doc, yRef, 8)
   drawSectionTitle(doc, yRef, 'Correção Monetária')
-  drawField(doc, yRef, 'Tabela utilizada', 'Tabela Prática do Tribunal de Justiça de São Paulo (IPCA-E)')
+  drawField(doc, yRef, 'Tabela utilizada', data.fonteCorrecao)
   drawField(doc, yRef, 'Fonte', data.fonteCorrecao)
   if (data.versaoTabela) {
     drawField(doc, yRef, 'Versão', data.versaoTabela)

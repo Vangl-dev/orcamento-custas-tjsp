@@ -47,7 +47,7 @@ type CorrectionExportData = {
 }
 
 const actionNames: Record<string, string> = {
-  cobranca: 'Cobrança',
+  cobranca: 'Procedimento Comum',
   execucao: 'Execução de título extrajudicial',
   cumprimento: 'Cumprimento de sentença',
   inventario: 'Inventário / Partilha',
@@ -274,7 +274,7 @@ export function exportCorrectionPdf(data: CorrectionExportData) {
   ensureSectionSpace(doc, yRef, 8)
   drawSectionTitle(doc, yRef, 'Correção Monetária')
   drawField(doc, yRef, 'Tabela utilizada', data.fonteCorrecao)
-  drawField(doc, yRef, 'Fonte', data.fonteCorrecao)
+  drawField(doc, yRef, 'Fonte', data.fonteTabela || data.fonteCorrecao)
   if (data.versaoTabela) {
     drawField(doc, yRef, 'Versão', data.versaoTabela)
   }
@@ -288,7 +288,7 @@ export function exportCorrectionPdf(data: CorrectionExportData) {
   ensureSectionSpace(doc, yRef, 5)
   drawSectionTitle(doc, yRef, 'Juros')
   drawField(doc, yRef, 'Critério aplicado', 'Juros legais — Art. 406 do Código Civil')
-  drawField(doc, yRef, 'Fundamento legal', data.fonteJuros)
+  drawField(doc, yRef, 'Fonte', data.fonteJuros)
   if (data.versaoJuros) {
     drawField(doc, yRef, 'Versão', data.versaoJuros)
   }

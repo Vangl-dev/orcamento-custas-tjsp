@@ -9,9 +9,9 @@ type CorrectionInput = {
 export type CorrectionResult = {
   valorCorrigido: number
   diferenca: number
-  indice: number
-  fatorInicial: number
-  fatorFinal: number
+  indice: number | null
+  fatorInicial: number | null
+  fatorFinal: number | null
   erro?: string
 }
 
@@ -26,16 +26,28 @@ export function calcularCorrecaoMonetaria(
     ]),
   )
 
+  const sorted = [...factors].sort(
+    (a, b) => a.year - b.year || a.month - b.month,
+  )
+  const last = sorted[sorted.length - 1]
+  const lastKey = last
+    ? `${last.year}-${String(last.month).padStart(2, '0')}`
+    : ''
+
   const fatorInicial = factorsByKey.get(termoInicial)
-  const fatorFinal = factorsByKey.get(termoFinal)
+  let fatorFinal = factorsByKey.get(termoFinal)
+
+  if (fatorFinal === undefined && last && termoFinal > lastKey) {
+    fatorFinal = last.factor
+  }
 
   if (!valorPrincipal || valorPrincipal <= 0) {
     return {
       valorCorrigido: 0,
       diferenca: 0,
-      indice: 0,
-      fatorInicial: fatorInicial ?? 0,
-      fatorFinal: fatorFinal ?? 0,
+      indice: null,
+      fatorInicial: fatorInicial ?? null,
+      fatorFinal: fatorFinal ?? null,
       erro: 'Informe o valor principal.',
     }
   }
@@ -44,9 +56,9 @@ export function calcularCorrecaoMonetaria(
     return {
       valorCorrigido: 0,
       diferenca: 0,
-      indice: 0,
-      fatorInicial: 0,
-      fatorFinal: fatorFinal ?? 0,
+      indice: null,
+      fatorInicial: null,
+      fatorFinal: fatorFinal ?? null,
       erro: 'Termo inicial fora da tabela disponível.',
     }
   }
@@ -55,9 +67,9 @@ export function calcularCorrecaoMonetaria(
     return {
       valorCorrigido: 0,
       diferenca: 0,
-      indice: 0,
+      indice: null,
       fatorInicial,
-      fatorFinal: 0,
+      fatorFinal: null,
       erro: 'Termo final fora da tabela disponível.',
     }
   }

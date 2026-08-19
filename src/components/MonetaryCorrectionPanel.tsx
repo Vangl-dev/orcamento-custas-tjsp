@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { CircleHelp, FileDown, ClipboardCopy } from 'lucide-react'
+import MonthYearPicker from './MonthYearPicker'
 import {
+  LEGAL_INTEREST_PDF_SOURCE_LABEL,
   LEGAL_INTEREST_SOURCE_LABEL,
   LEGAL_INTEREST_SOURCE_URL,
 } from '../data/legalInterestRates'
@@ -38,7 +40,9 @@ type Props = {
 
 const legalInterestBounds = getLegalInterestMonthBounds()
 
-function formatFactor(value: number) {
+function formatFactor(value: number | null) {
+  if (value === null) return '—'
+
   return value.toLocaleString('pt-BR', {
     minimumFractionDigits: 6,
     maximumFractionDigits: 6,
@@ -90,8 +94,23 @@ export default function MonetaryCorrectionPanel({
   limparCalculo,
 }: Props) {
   const monthBounds = getMonthBounds(correctionFactors)
+  const correcaoDisponivel = !resultado.erro
+  const jurosDisponivel = !resultadoJuros.erro
   const totalAtualizado = resultado.valorCorrigido + resultadoJuros.juros
-  const canExport = !resultado.erro && !resultadoJuros.erro
+  const canExport = correcaoDisponivel && jurosDisponivel
+  const valorCorrigidoDisplay = correcaoDisponivel
+    ? formatCurrency(resultado.valorCorrigido)
+    : '—'
+  const correcaoAcumuladaDisplay = correcaoDisponivel
+    ? formatCurrency(resultado.diferenca)
+    : '—'
+  const jurosDisplay = jurosDisponivel
+    ? formatCurrency(resultadoJuros.juros)
+    : '—'
+  const totalDisplay =
+    correcaoDisponivel && jurosDisponivel
+      ? formatCurrency(totalAtualizado)
+      : '—'
 
   const [copiado, setCopiado] = useState(false)
 
@@ -171,24 +190,18 @@ export default function MonetaryCorrectionPanel({
           <div>
             <label>Termo inicial</label>
 
-            <input
-              type="month"
-              min={monthBounds.min || undefined}
-              max={monthBounds.max || undefined}
+            <MonthYearPicker
               value={termoInicial}
-              onChange={(e) => setTermoInicial(e.target.value)}
+              onChange={setTermoInicial}
             />
           </div>
 
           <div>
             <label>Termo final</label>
 
-            <input
-              type="month"
-              min={monthBounds.min || undefined}
-              max={monthBounds.max || undefined}
+            <MonthYearPicker
               value={termoFinal}
-              onChange={(e) => setTermoFinal(e.target.value)}
+              onChange={setTermoFinal}
             />
           </div>
         </div>
@@ -209,7 +222,6 @@ export default function MonetaryCorrectionPanel({
 
             <input
               type="date"
-              max={legalInterestBounds.maxDate}
               value={jurosDataFinal}
               onChange={(e) => setJurosDataFinal(e.target.value)}
             />
@@ -236,12 +248,12 @@ export default function MonetaryCorrectionPanel({
         <div className="correction-result">
           <div>
             <span>Valor corrigido</span>
-            <strong>{formatCurrency(resultado.valorCorrigido)}</strong>
+            <strong>{valorCorrigidoDisplay}</strong>
           </div>
 
           <div>
             <span>Correção acumulada</span>
-            <strong>{formatCurrency(resultado.diferenca)}</strong>
+            <strong>{correcaoAcumuladaDisplay}</strong>
           </div>
         </div>
 
@@ -249,16 +261,16 @@ export default function MonetaryCorrectionPanel({
           <div className="interest-total">
             <div>
               <span>Juros legais</span>
-              <strong>{formatCurrency(resultadoJuros.juros)}</strong>
+              <strong>{jurosDisplay}</strong>
             </div>
 
             <div>
               <span>Total atualizado</span>
-              <strong>{formatCurrency(totalAtualizado)}</strong>
+              <strong>{totalDisplay}</strong>
             </div>
           </div>
 
-          {resultadoJuros.breakdown.length > 0 && (
+          {jurosDisponivel && resultadoJuros.breakdown.length > 0 && (
             <div className="interest-breakdown">
               {resultadoJuros.breakdown.map((item) => (
                 <div key={`${item.label}-${item.startDate}`}>
@@ -300,7 +312,7 @@ export default function MonetaryCorrectionPanel({
                 amount: formatCurrency(item.amount),
               })),
               fonteCorrecao: correctionMetadata?.sourceLabel ?? 'Tabela Prática TJSP',
-              fonteJuros: LEGAL_INTEREST_SOURCE_LABEL,
+              fonteJuros: LEGAL_INTEREST_PDF_SOURCE_LABEL,
               versaoTabela: correctionMetadata?.version,
               fonteTabela: correctionMetadata?.source,
               versaoJuros: undefined,
@@ -337,7 +349,7 @@ export default function MonetaryCorrectionPanel({
 
         {(resultado.erro || resultadoJuros.erro) && (
           <p className="field-warning">
-            {resultado.erro || resultadoJuros.erro}
+            {[resultado.erro, resultadoJuros.erro].filter(Boolean).join(' ')}
           </p>
         )}
 

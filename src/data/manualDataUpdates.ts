@@ -12,5 +12,7 @@ import type { LegalInterestRate } from './legalInterestRates'
 */
 
 export const MANUAL_LEGAL_INTEREST_RATES: LegalInterestRate[] = [
-  // Cole aqui as novas taxas legais mensais do BCB.
+  { year: 2026, month: 6, monthlyRate: 0.00450641 },
+  { year: 2026, month: 7, monthlyRate: 0.00706607 },
+  { year: 2026, month: 8, monthlyRate: 0.01154527 },
 ]

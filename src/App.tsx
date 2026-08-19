@@ -92,7 +92,7 @@ function App() {
   }
 
   const actionLabels: Record<string, string> = {
-    cobranca: 'Cobrança',
+    cobranca: 'Procedimento Comum',
     execucao: 'Execução',
     cumprimento: 'Cumprimento de sentença',
     inventario: 'Inventário / Partilha',
@@ -122,14 +122,20 @@ function App() {
   parseBrazilianCurrency(valorApelacao) * 0.04
 
   const factors = correctionTable?.factors ?? []
+  const valorPrincipal = parseBrazilianCurrency(valorCorrecaoDisplay)
   const resultadoCorrecao = calcularCorrecaoMonetaria(factors, {
-    valorPrincipal: parseBrazilianCurrency(valorCorrecaoDisplay),
+    valorPrincipal,
     termoInicial,
     termoFinal,
   })
 
+  const principalJuros =
+    !resultadoCorrecao.erro && resultadoCorrecao.valorCorrigido > 0
+      ? resultadoCorrecao.valorCorrigido
+      : valorPrincipal
+
   const resultadoJuros = calcularJurosLegais({
-    principal: resultadoCorrecao.valorCorrigido,
+    principal: principalJuros,
     startDate: jurosDataInicial,
     endDate: jurosDataFinal,
   })

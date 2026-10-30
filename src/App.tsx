@@ -19,6 +19,8 @@ import {
   loadCorrectionData,
   type CorrectionTableData,
 } from './services/correctionDataService'
+import { loadLegalInterestRates } from './services/legalInterestDataService'
+import type { LegalInterestRate } from './data/legalInterestRates'
 
 function App() {
   const [settings, setSettings] = useState(loadSettings())
@@ -39,6 +41,21 @@ function App() {
           err instanceof Error
             ? err.message
             : 'Erro ao carregar os dados da tabela de correção.',
+        ),
+      )
+  }, [])
+
+  const [legalRates, setLegalRates] = useState<LegalInterestRate[]>([])
+  const [legalRatesError, setLegalRatesError] = useState('')
+
+  useEffect(() => {
+    loadLegalInterestRates()
+      .then(setLegalRates)
+      .catch((err) =>
+        setLegalRatesError(
+          err instanceof Error
+            ? err.message
+            : 'Erro ao carregar a tabela da Taxa Legal.',
         ),
       )
   }, [])
@@ -111,8 +128,8 @@ function App() {
   })
 
   const resultadoCustas = calcularCustas({
-    postalQtd,
-    oficialQtd,
+    postalQtd: incluirCitacoes ? postalQtd : 0,
+    oficialQtd: incluirCitacoes ? oficialQtd : 0,
     tipoOficial,
     settings,
   })
@@ -134,15 +151,20 @@ function App() {
       ? resultadoCorrecao.valorCorrigido
       : valorPrincipal
 
-  const resultadoJuros = calcularJurosLegais({
-    principal: principalJuros,
-    startDate: jurosDataInicial,
-    endDate: jurosDataFinal,
-  })
+  const resultadoJuros = legalRatesError
+    ? { juros: 0, breakdown: [], erro: legalRatesError }
+    : legalRates.length === 0
+    ? { juros: 0, breakdown: [], erro: 'Carregando a Taxa Legal...' }
+    : calcularJurosLegais({
+        principal: principalJuros,
+        startDate: jurosDataInicial,
+        endDate: jurosDataFinal,
+        rates: legalRates,
+      })
   const dataHora = new Date().toLocaleString('pt-BR')
 
  const memoriaCalculo = `
-TJSP Toolkit
+Orçamento de Custas TJSP
 ──────────────────────────
 
 Data/Hora:
@@ -173,7 +195,7 @@ ${resultadoTaxa.observacao ?? ''}
 
 ──────────────────────────
 
-Gerado pelo TJSP Toolkit
+Gerado pelo Orçamento de Custas TJSP
 https://vangl-dev.github.io/orcamento-custas-tjsp
 `.trim()
 
@@ -354,6 +376,7 @@ const limparCalculo = () => {
               formatCurrency={formatCurrency}
               correctionFactors={factors}
               correctionMetadata={correctionTable?.metadata ?? null}
+              legalRates={legalRates}
               limparCalculo={limparCalculo}
             />
           )}

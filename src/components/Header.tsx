@@ -7,7 +7,7 @@ export default function Header({ onSettingsClick }: HeaderProps) {
     <header className="app-header">
       <div>
         <div className="brand-badge">TJSP • Custas</div>
-        <h1>Orçamento Custas TJSP</h1>
+        <h1>Orçamento de Custas TJSP</h1>
         <p>
           Simulador inteligente de custas processuais do Tribunal de Justiça de
           São Paulo

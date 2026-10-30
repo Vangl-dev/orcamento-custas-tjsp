@@ -1,0 +1,49 @@
+name: Atualizar Tabela Prática e Taxa Legal
+
+# Confere as fontes todo dia; só faz commit (e publica o site) quando sai mês novo.
+# Se a fonte mudar de formato ou alterar um mês antigo, o job falha e o GitHub
+# avisa por e-mail; nesse caso nada é publicado.
+on:
+  schedule:
+    - cron: '0 11 * * *' # 08:00 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: atualizar-dados
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: node scripts/atualizar-dados.mjs
+
+      - id: commit
+        run: |
+          if git diff --quiet -- public/data; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          git commit -m "Atualiza Tabela Prática e Taxa Legal ($(date +%Y-%m-%d))"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Commits feitos pelo próprio Actions não disparam o deploy por push.
+      - if: steps.commit.outputs.changed == 'true'
+        run: gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}

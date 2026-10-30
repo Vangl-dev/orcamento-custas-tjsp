@@ -1,9 +1,10 @@
-import { LEGAL_INTEREST_RATES } from '../data/legalInterestRates'
+import type { LegalInterestRate } from '../data/legalInterestRates'
 
 type LegalInterestInput = {
   principal: number
   startDate: string
   endDate: string
+  rates: LegalInterestRate[]
 }
 
 export type LegalInterestBreakdown = {
@@ -20,23 +21,18 @@ export type LegalInterestResult = {
   erro?: string
 }
 
+// Datas tratadas em UTC: sem horário de verão nem fuso do navegador
+// interferindo na contagem de dias ou na formatação.
 const dayInMs = 24 * 60 * 60 * 1000
-const cc1916End = parseLocalDate('2003-01-11')
-const cc2002Start = parseLocalDate('2003-01-12')
-const cc2002End = parseLocalDate('2024-08-29')
-const taxaLegalStart = parseLocalDate('2024-08-30')
+const cc1916End = parseDate('2003-01-11')
+const cc2002Start = parseDate('2003-01-12')
+const cc2002End = parseDate('2024-08-29')
+const taxaLegalStart = parseDate('2024-08-30')
 
-const legalRatesByKey = new Map(
-  LEGAL_INTEREST_RATES.map((item) => [
-    `${item.year}-${String(item.month).padStart(2, '0')}`,
-    item.monthlyRate,
-  ]),
-)
-
-function parseLocalDate(value: string) {
+function parseDate(value: string) {
   const [year, month, day] = value.split('-').map(Number)
 
-  return new Date(year, month - 1, day)
+  return new Date(Date.UTC(year, month - 1, day))
 }
 
 function formatDate(value: Date) {
@@ -44,10 +40,7 @@ function formatDate(value: Date) {
 }
 
 function addDays(value: Date, days: number) {
-  const next = new Date(value)
-  next.setDate(next.getDate() + days)
-
-  return next
+  return new Date(value.getTime() + days * dayInMs)
 }
 
 function minDate(a: Date, b: Date) {
@@ -59,11 +52,15 @@ function maxDate(a: Date, b: Date) {
 }
 
 function inclusiveDays(start: Date, end: Date) {
-  return Math.floor((end.getTime() - start.getTime()) / dayInMs) + 1
+  return Math.round((end.getTime() - start.getTime()) / dayInMs) + 1
 }
 
 function daysInMonth(year: number, month: number) {
-  return new Date(year, month, 0).getDate()
+  return new Date(Date.UTC(year, month, 0)).getUTCDate()
+}
+
+function rateKey(year: number, month: number) {
+  return `${year}-${String(month).padStart(2, '0')}`
 }
 
 function simpleAnnualInterest(
@@ -81,22 +78,23 @@ function calculateTaxaLegalInterest(
   principal: number,
   start: Date,
   end: Date,
+  ratesByKey: Map<string, number>,
 ) {
-  let cursor = new Date(start)
+  let cursor = start
   let amount = 0
 
   while (cursor.getTime() <= end.getTime()) {
-    const year = cursor.getFullYear()
-    const month = cursor.getMonth() + 1
-    const monthEnd = new Date(year, month, 0)
+    const year = cursor.getUTCFullYear()
+    const month = cursor.getUTCMonth() + 1
+    const monthEnd = new Date(Date.UTC(year, month, 0))
     const periodEnd = minDate(monthEnd, end)
-    const key = `${year}-${String(month).padStart(2, '0')}`
-    const monthlyRate = legalRatesByKey.get(key)
+    const key = rateKey(year, month)
+    const monthlyRate = ratesByKey.get(key)
 
     if (monthlyRate === undefined) {
       return {
         amount,
-        erro: `Taxa Legal não cadastrada para ${key}.`,
+        erro: `Taxa Legal não cadastrada para ${String(month).padStart(2, '0')}/${year}.`,
       }
     }
 
@@ -130,6 +128,7 @@ export function calcularJurosLegais({
   principal,
   startDate,
   endDate,
+  rates,
 }: LegalInterestInput): LegalInterestResult {
   if (!principal || principal <= 0) {
     return {
@@ -147,8 +146,8 @@ export function calcularJurosLegais({
     }
   }
 
-  const start = parseLocalDate(startDate)
-  const end = parseLocalDate(endDate)
+  const start = parseDate(startDate)
+  const end = parseDate(endDate)
 
   if (start.getTime() > end.getTime()) {
     return {
@@ -186,10 +185,14 @@ export function calcularJurosLegais({
 
   const taxaLegalPeriodStart = maxDate(start, taxaLegalStart)
   if (taxaLegalPeriodStart.getTime() <= end.getTime()) {
+    const ratesByKey = new Map(
+      rates.map((item) => [rateKey(item.year, item.month), item.monthlyRate]),
+    )
     const taxaLegal = calculateTaxaLegalInterest(
       principal,
       taxaLegalPeriodStart,
       end,
+      ratesByKey,
     )
 
     addBreakdown(
@@ -215,18 +218,15 @@ export function calcularJurosLegais({
   }
 }
 
-export function getLegalInterestMonthBounds() {
-  const sorted = [...LEGAL_INTEREST_RATES].sort(
-    (a, b) => a.year - b.year || a.month - b.month,
-  )
+export function getLegalInterestMonthBounds(rates: LegalInterestRate[]) {
+  if (rates.length === 0) return { min: '', max: '' }
+
+  const sorted = [...rates].sort((a, b) => a.year - b.year || a.month - b.month)
   const first = sorted[0]
   const last = sorted[sorted.length - 1]
 
   return {
-    min: `${first.year}-${String(first.month).padStart(2, '0')}`,
-    max: `${last.year}-${String(last.month).padStart(2, '0')}`,
-    maxDate: `${last.year}-${String(last.month).padStart(2, '0')}-${String(
-      daysInMonth(last.year, last.month),
-    ).padStart(2, '0')}`,
+    min: rateKey(first.year, first.month),
+    max: rateKey(last.year, last.month),
   }
 }

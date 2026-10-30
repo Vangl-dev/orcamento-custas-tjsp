@@ -1,5 +1,6 @@
 import jsPDF from 'jspdf'
 
+const APP_NAME = 'Orçamento de Custas TJSP'
 const APP_VERSION = '1.0.0'
 const PAGE_HEIGHT = 297
 const MARGIN_TOP = 14
@@ -44,6 +45,7 @@ type CorrectionExportData = {
   versaoTabela?: string
   fonteTabela?: string
   versaoJuros?: string
+  aviso?: string
 }
 
 const actionNames: Record<string, string> = {
@@ -96,7 +98,7 @@ function drawHeader(doc: jsPDF, title: string) {
 
   doc.setFontSize(9)
   doc.setFont('helvetica', 'normal')
-  doc.text(`TJSP Toolkit v${APP_VERSION} · Documento gerado automaticamente`, 24, 39)
+  doc.text(`${APP_NAME} v${APP_VERSION} · Documento gerado automaticamente`, 24, 39)
 }
 
 function drawFooterOnPage(doc: jsPDF, dataHora: string) {
@@ -112,7 +114,7 @@ function drawFooterOnPage(doc: jsPDF, dataHora: string) {
     doc.setFontSize(7)
     doc.setFont('helvetica', 'normal')
     doc.setTextColor(...COLORS.gray)
-    doc.text(`TJSP Toolkit v${APP_VERSION}`, 20, footerY + 5)
+    doc.text(`${APP_NAME} v${APP_VERSION}`, 20, footerY + 5)
     doc.text(`Gerado em: ${dataHora}`, 20, footerY + 10)
     doc.text('https://vangl-dev.github.io/orcamento-custas-tjsp', 20, footerY + 15)
   }
@@ -283,6 +285,13 @@ export function exportCorrectionPdf(data: CorrectionExportData) {
   drawField(doc, yRef, 'Índice aplicado', data.indice, { alignRight: true })
   drawField(doc, yRef, 'Valor corrigido', data.valorCorrigido, { bold: true, alignRight: true })
   drawField(doc, yRef, 'Correção acumulada', data.correcaoAcumulada, { alignRight: true })
+  if (data.aviso) {
+    doc.setFontSize(8)
+    doc.setFont('helvetica', 'normal')
+    doc.setTextColor(...COLORS.gray)
+    doc.text(doc.splitTextToSize(`Observação: ${data.aviso}`, 170), 20, yRef.value)
+    yRef.value += 8
+  }
   drawDivider(doc, yRef)
 
   ensureSectionSpace(doc, yRef, 5)

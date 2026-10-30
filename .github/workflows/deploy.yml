@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,6 +27,8 @@ jobs:
           node-version: 22
 
       - run: npm ci
+
+      - run: npm test
 
       - run: npm run build
 

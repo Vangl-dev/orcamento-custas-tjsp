@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "source": "Banco Central do Brasil — SGS 29543",
+    "sourceUrl": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29543/dados?formato=json",
+    "updatedAt": "2026-10-30",
+    "lastMonth": "Outubro/2026"
+  },
+  "rates": [
+    {
+      "year": 2024,
+      "month": 8,
+      "monthlyRate": 0.00605306
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "monthlyRate": 0.00676227
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "monthlyRate": 0.00704241
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "monthlyRate": 0.00385874
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "monthlyRate": 0.00171924
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "monthlyRate": 0.00589427
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "monthlyRate": 0.00902209
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "monthlyRate": 0
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "monthlyRate": 0.00321969
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "monthlyRate": 0.006232
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "monthlyRate": 0.00775982
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "monthlyRate": 0.0083488
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "monthlyRate": 0.00942622
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "monthlyRate": 0.01305984
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "monthlyRate": 0.00736394
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "monthlyRate": 0.01093764
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "monthlyRate": 0.00851001
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "monthlyRate": 0.0096751
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "monthlyRate": 0.00962232
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "monthlyRate": 0.00155714
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "monthlyRate": 0.00768672
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "monthlyRate": 0.00198293
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "monthlyRate": 0.00450641
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "monthlyRate": 0.00706607
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "monthlyRate": 0.01154527
+    },
+    {
+      "year": 2026,
+      "month": 9,
+      "monthlyRate": 0.01499119
+    },
+    {
+      "year": 2026,
+      "month": 10,
+      "monthlyRate": 0.0037902
+    }
+  ]
+}

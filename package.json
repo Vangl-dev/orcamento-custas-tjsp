@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "TZ=America/Sao_Paulo vitest run",
+    "atualizar-dados": "node scripts/atualizar-dados.mjs"
   },
   "dependencies": {
     "dayjs": "^1.11.20",
@@ -31,6 +33,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "vitest": "^5.0.5"
   }
 }

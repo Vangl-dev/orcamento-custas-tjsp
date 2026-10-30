@@ -5,6 +5,7 @@ import {
   LEGAL_INTEREST_PDF_SOURCE_LABEL,
   LEGAL_INTEREST_SOURCE_LABEL,
   LEGAL_INTEREST_SOURCE_URL,
+  type LegalInterestRate,
 } from '../data/legalInterestRates'
 import type { CorrectionResult } from '../engines/correctionEngine'
 import type {
@@ -35,10 +36,12 @@ type Props = {
   formatCurrency: (value: number) => string
   correctionFactors: CorrectionFactor[]
   correctionMetadata: CorrectionTableMetadata | null
+  legalRates: LegalInterestRate[]
   limparCalculo: () => void
 }
 
-const legalInterestBounds = getLegalInterestMonthBounds()
+const DEFAULT_TABLE_LABEL =
+  'Tabela Prática do Tribunal de Justiça de São Paulo (IPCA-E)'
 
 function formatFactor(value: number | null) {
   if (value === null) return '—'
@@ -91,9 +94,11 @@ export default function MonetaryCorrectionPanel({
   formatCurrency,
   correctionFactors,
   correctionMetadata,
+  legalRates,
   limparCalculo,
 }: Props) {
   const monthBounds = getMonthBounds(correctionFactors)
+  const legalInterestBounds = getLegalInterestMonthBounds(legalRates)
   const correcaoDisponivel = !resultado.erro
   const jurosDisponivel = !resultadoJuros.erro
   const totalAtualizado = resultado.valorCorrigido + resultadoJuros.juros
@@ -116,8 +121,9 @@ export default function MonetaryCorrectionPanel({
 
   const gerarMemoriaPeticao = async () => {
     const hoje = new Date().toLocaleDateString('pt-BR')
-    const nomeTabela = correctionMetadata?.sourceLabel ?? 'Tabela Pratica do Tribunal de Justica de Sao Paulo (IPCA-E)'
-    const texto = `Conforme memoria de calculo gerada pelo TJSP Toolkit, o debito atualizado ate ${hoje} corresponde a ${formatCurrency(totalAtualizado)}, composto por principal de ${valorDisplay || 'nao informado'}, correcao monetaria de ${formatCurrency(resultado.diferenca)}, calculada pela ${nomeTabela}, e juros legais de ${formatCurrency(resultadoJuros.juros)}, calculados conforme o art. 406 do Codigo Civil e Taxa Legal divulgada pelo Banco Central do Brasil.`
+    const nomeTabela = correctionMetadata?.sourceLabel ?? DEFAULT_TABLE_LABEL
+    const principal = valorDisplay ? `R$ ${valorDisplay}` : 'não informado'
+    const texto = `Conforme memória de cálculo anexa, o débito atualizado até ${hoje} corresponde a ${formatCurrency(totalAtualizado)}, composto por principal de ${principal}, correção monetária de ${formatCurrency(resultado.diferenca)}, calculada pela ${nomeTabela}, e juros legais de ${formatCurrency(resultadoJuros.juros)}, calculados conforme o art. 406 do Código Civil e a Taxa Legal divulgada pelo Banco Central do Brasil.`
 
     try {
       await navigator.clipboard.writeText(texto)
@@ -131,12 +137,12 @@ export default function MonetaryCorrectionPanel({
   return (
     <section className="hero-card">
       <div style={{ width: '100%' }}>
-        <span className="hero-badge">Tabela Pratica do TJSP</span>
+        <span className="hero-badge">Tabela Prática do TJSP</span>
 
-        <h2>Correcao Monetaria</h2>
+        <h2>Correção Monetária</h2>
 
         <p>
-          Atualizacao pela Tabela Pratica do Tribunal de Justica de Sao Paulo (IPCA-E), com juros legais em separado.
+          Atualização pela Tabela Prática do Tribunal de Justiça de São Paulo (IPCA-E), com juros legais em separado.
         </p>
 
         <div className="update-status">
@@ -147,15 +153,17 @@ export default function MonetaryCorrectionPanel({
                 : ''
             }
           >
-            Tabela Pratica do TJSP (IPCA-E) ate {monthBounds.max ? formatMonthLabel(monthBounds.max) : '--'}
+            Tabela Prática do TJSP (IPCA-E) até {monthBounds.max ? formatMonthLabel(monthBounds.max) : '--'}
           </span>
 
           <span
             className={
-              isBehindPreviousMonth(legalInterestBounds.max) ? 'attention' : ''
+              legalInterestBounds.max && isBehindPreviousMonth(legalInterestBounds.max)
+                ? 'attention'
+                : ''
             }
           >
-            Taxa Legal até {formatMonthLabel(legalInterestBounds.max)}
+            Taxa Legal até {legalInterestBounds.max ? formatMonthLabel(legalInterestBounds.max) : '--'}
           </span>
 
           <button
@@ -165,9 +173,8 @@ export default function MonetaryCorrectionPanel({
           >
             <CircleHelp size={16} aria-hidden="true" />
             <span className="tooltip-content" role="tooltip">
-              Para atualizar, substitua o arquivo
-              public/data/correction-table.json gerado pelo
-              TJSP Data Builder.
+              As tabelas são atualizadas automaticamente: o GitHub confere a
+              AASP e o Banco Central todos os dias e publica os meses novos.
             </span>
           </button>
         </div>
@@ -277,7 +284,7 @@ export default function MonetaryCorrectionPanel({
                   <span>{item.label}</span>
                   <strong>{formatCurrency(item.amount)}</strong>
                   <small>
-                    {item.startDate} a {item.endDate} · {item.days} dias
+                    {formatDateLabel(item.startDate)} a {formatDateLabel(item.endDate)} · {item.days} dias
                   </small>
                 </div>
               ))}
@@ -311,11 +318,14 @@ export default function MonetaryCorrectionPanel({
                 days: item.days,
                 amount: formatCurrency(item.amount),
               })),
-              fonteCorrecao: correctionMetadata?.sourceLabel ?? 'Tabela Prática TJSP',
+              fonteCorrecao: correctionMetadata?.sourceLabel ?? DEFAULT_TABLE_LABEL,
               fonteJuros: LEGAL_INTEREST_PDF_SOURCE_LABEL,
               versaoTabela: correctionMetadata?.version,
               fonteTabela: correctionMetadata?.source,
-              versaoJuros: undefined,
+              versaoJuros: legalInterestBounds.max
+                ? `até ${formatMonthLabel(legalInterestBounds.max)}`
+                : undefined,
+              aviso: resultado.aviso,
             })
           }
         >
@@ -328,7 +338,7 @@ export default function MonetaryCorrectionPanel({
           type="button"
           onClick={limparCalculo}
         >
-          Novo calculo
+          Novo cálculo
         </button>
 
         <button
@@ -338,7 +348,7 @@ export default function MonetaryCorrectionPanel({
           onClick={gerarMemoriaPeticao}
         >
           <ClipboardCopy size={18} aria-hidden="true" />
-          Copiar memoria para peticao
+          Copiar memória para petição
         </button>
 
         {copiado && (
@@ -347,19 +357,21 @@ export default function MonetaryCorrectionPanel({
           </span>
         )}
 
-        {(resultado.erro || resultadoJuros.erro) && (
+        {(resultado.erro || resultadoJuros.erro || resultado.aviso) && (
           <p className="field-warning">
-            {[resultado.erro, resultadoJuros.erro].filter(Boolean).join(' ')}
+            {[resultado.erro, resultado.aviso, resultadoJuros.erro]
+              .filter(Boolean)
+              .join(' ')}
           </p>
         )}
 
         <div className="source-note">
-          <strong>Correcao:</strong>{' '}
+          <strong>Correção:</strong>{' '}
           <a
             href={correctionMetadata?.sourceUrl ?? '#'}
             target="_blank"
           >
-            {correctionMetadata?.sourceLabel ?? 'Tabela Pratica do TJSP (IPCA-E)'}
+            {correctionMetadata?.sourceLabel ?? DEFAULT_TABLE_LABEL}
           </a>
           <br />
           <strong>Juros:</strong>{' '}

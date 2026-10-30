@@ -13,6 +13,7 @@ export type CorrectionResult = {
   fatorInicial: number | null
   fatorFinal: number | null
   erro?: string
+  aviso?: string
 }
 
 export function calcularCorrecaoMonetaria(
@@ -36,9 +37,11 @@ export function calcularCorrecaoMonetaria(
 
   const fatorInicial = factorsByKey.get(termoInicial)
   let fatorFinal = factorsByKey.get(termoFinal)
+  let aviso: string | undefined
 
   if (fatorFinal === undefined && last && termoFinal > lastKey) {
     fatorFinal = last.factor
+    aviso = `A tabela vai até ${String(last.month).padStart(2, '0')}/${last.year}. Para o termo final foi usado o fator desse mês.`
   }
 
   if (!valorPrincipal || valorPrincipal <= 0) {
@@ -83,5 +86,6 @@ export function calcularCorrecaoMonetaria(
     indice,
     fatorInicial,
     fatorFinal,
+    aviso,
   }
 }

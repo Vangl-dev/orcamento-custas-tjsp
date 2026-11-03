@@ -43,17 +43,38 @@ function normalize(text) {
   return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 }
 
-async function fetchText(url) {
-  const response = await fetch(url, {
-    headers: { 'User-Agent': 'Mozilla/5.0 (orcamento-custas-tjsp)' },
-    signal: AbortSignal.timeout(30000),
-  })
+const FETCH_ATTEMPTS = 5
+const RETRY_DELAY_MS = 30000
 
-  if (!response.ok) {
-    throw new Error(`${url} respondeu ${response.status}`)
+// As fontes às vezes derrubam a conexão por alguns segundos; tenta de novo
+// antes de desistir, para não falhar (e mandar e-mail) por uma queda passageira.
+async function fetchText(name, url) {
+  let lastError
+
+  for (let attempt = 1; attempt <= FETCH_ATTEMPTS; attempt++) {
+    try {
+      const response = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (orcamento-custas-tjsp)' },
+        signal: AbortSignal.timeout(30000),
+      })
+
+      if (!response.ok) {
+        throw new Error(`respondeu ${response.status}`)
+      }
+
+      return await response.text()
+    } catch (error) {
+      const cause = error.cause?.code ?? error.cause?.message
+      lastError = cause ? `${error.message} (${cause})` : error.message
+
+      if (attempt < FETCH_ATTEMPTS) {
+        console.log(`${name}: tentativa ${attempt} falhou (${lastError}); tentando de novo.`)
+        await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS))
+      }
+    }
   }
 
-  return response.text()
+  throw new Error(`${name}: site inacessível após ${FETCH_ATTEMPTS} tentativas (${lastError}).`)
 }
 
 function assertContinuous(items, name) {
@@ -171,7 +192,7 @@ async function writeJson(file, data) {
 }
 
 async function atualizarTabelaPratica() {
-  const factors = parseAaspTable(await fetchText(AASP_URL))
+  const factors = parseAaspTable(await fetchText('AASP', AASP_URL))
   const current = await readJson(CORRECTION_FILE)
   const oldFactors = current?.factors ?? []
 
@@ -202,7 +223,7 @@ async function atualizarTabelaPratica() {
 }
 
 async function atualizarTaxaLegal() {
-  const rates = parseBcbSeries(JSON.parse(await fetchText(BCB_URL)))
+  const rates = parseBcbSeries(JSON.parse(await fetchText('BCB', BCB_URL)))
   const current = await readJson(LEGAL_RATES_FILE)
   const oldRates = current?.rates ?? []
 

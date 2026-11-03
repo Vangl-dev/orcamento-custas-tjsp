@@ -2,8 +2,8 @@
   "metadata": {
     "source": "Banco Central do Brasil — SGS 29543",
     "sourceUrl": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.29543/dados?formato=json",
-    "updatedAt": "2026-10-30",
-    "lastMonth": "Outubro/2026"
+    "updatedAt": "2026-11-03",
+    "lastMonth": "Novembro/2026"
   },
   "rates": [
     {
@@ -140,6 +140,11 @@
       "year": 2026,
       "month": 10,
       "monthlyRate": 0.0037902
+    },
+    {
+      "year": 2026,
+      "month": 11,
+      "monthlyRate": 0.00749583
     }
   ]
 }

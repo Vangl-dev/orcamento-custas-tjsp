@@ -3,10 +3,10 @@
     "source": "AASP",
     "sourceUrl": "https://www.aasp.org.br/produtos-servicos/indices-economicos/indices-judiciais/tabela-pratica-para-calculo-de-atualizacao-monetaria-ipca-e/",
     "sourceLabel": "Tabela Prática do Tribunal de Justiça de São Paulo (IPCA-E)",
-    "updatedAt": "2026-10-30",
-    "version": "2026.10",
-    "lastMonth": "Outubro/2026",
-    "totalRecords": 418
+    "updatedAt": "2026-11-06",
+    "version": "2026.11",
+    "lastMonth": "Novembro/2026",
+    "totalRecords": 419
   },
   "factors": [
     {
@@ -2098,6 +2098,11 @@
       "year": 2026,
       "month": 10,
       "factor": 8.626474
+    },
+    {
+      "year": 2026,
+      "month": 11,
+      "factor": 8.654078
     }
   ]
 }
